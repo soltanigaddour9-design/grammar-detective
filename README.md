@@ -1,3 +1,3 @@
 # Grammar Detective
 PSE 2B · Unit 4 Customs and Traditions · EP Riyadh × AlMaarefa University.
-Mobile grammar missions (fix the group chat). Mission links: `?m=1` to `?m=5`. Teacher answer key: `?key`.
+Mobile grammar missions (fix the group chat). Mission links: `?m=1` to `?m=5`. Teacher answer key: `?key`. Teacher live board: `?live&m=3` (answers arrive through ntfy.sh on a private topic).
