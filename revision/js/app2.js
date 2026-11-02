@@ -617,7 +617,7 @@ function vocabRoom(r) {
   const cur = r.mode === 'u' ? r.id : '4';
   const u = V.units.find(x => x.id === 'u' + cur) || V.units[V.units.length - 1];
   const known = store.get('known', {}), kn = u.words.filter(w => known[w.w]).length;
-  const games = ['u4', 'suffix', 'pic', 'meaning', 'gap', 'partners', 'forms', 'prefix', 'spell', 'syn', 'stress'].map(id => V.recipes.find(x => x.id === id)).filter(Boolean);
+  const games = ['watch', 'u4', 'suffix', 'pic', 'meaning', 'gap', 'partners', 'forms', 'prefix', 'spell', 'syn', 'stress'].map(id => V.recipes.find(x => x.id === id)).filter(Boolean);
   mount(roomHero('vocab', [['15 marks', 1], ['Units 1 to 4'], [`${V.units.reduce((a, x) => a + x.words.length, 0)} words`]]) +
     `<p class="intro">Choose a unit. Flip the cards: guess the word from the picture, then check the meaning. Then play the word games.</p>
     <div class="chips">${V.units.map(x => `<a href="#/s/vocab/u/${x.id.slice(1)}" class="${x.id === u.id ? 'on' : ''}">Unit ${x.id.slice(1)}</a>`).join('')}</div>
