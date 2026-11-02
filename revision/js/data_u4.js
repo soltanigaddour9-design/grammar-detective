@@ -515,7 +515,7 @@ const pickKeep = (a, n) => shuffle(a.map((_, i) => i)).slice(0, n).sort((x, y) =
 window.EXAM_INFO = { SEC, unitsOf, inSec, total: 60, parts: [
   { sec: 'listening', name: 'Listening', marks: 10, units: 'Unit 4' },
   { sec: 'reading', name: 'Reading', marks: 10, units: 'Units 2, 3 and 4' },
-  { sec: 'writing', name: 'Writing', marks: 10, raw: 40, units: 'Units 2 and 4' },
+  { sec: 'writing', name: 'Writing', marks: 10, units: 'Units 2 and 4' },
   { sec: 'grammar', name: 'Grammar', marks: 15, units: 'Units 1 to 4' },
   { sec: 'vocab', name: 'Vocabulary', marks: 15, units: 'Units 1 to 4' }
 ], speaking: 'Units 1, 3 and 4' };
@@ -531,7 +531,7 @@ window.EXAM_V2 = function () {
     { kind: 'reading', name: 'Reading', marks: 10, test: rt, q: pickKeep(rt.q, 10) },
     { kind: 'grammar', name: 'Grammar', marks: 15, q: shuffle(gq).slice(0, 15) },
     { kind: 'vocab', name: 'Vocabulary', marks: 15, q: V.exam().slice(0, 15) },
-    { kind: 'writing', name: 'Writing', marks: 10, raw: 40, kit: shuffle(KITS)[0] }
+    { kind: 'writing', name: 'Writing', marks: 10, kit: shuffle(KITS)[0] }
   ];
 };
 })();

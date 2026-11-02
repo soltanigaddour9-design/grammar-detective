@@ -503,8 +503,8 @@ function writingRoom(r) {
     return runQuiz($('#qz'), { title: `${m[0]} ${m[1]}`, questions: shuffle(m[2]).slice(0, 10), key: 'q_' + r.id, room: 'writing', reshuffle: () => shuffle(m[2]).slice(0, 10) });
   }
   if (r.mode === 'k') { const K = KITS.find(k => k.id === r.id); if (!K) return go('#/s/writing'); return kitPage(K, r.step || 'see'); }
-  mount(roomHero('writing', [['40 marks → 10', 1], ['Units 2 and 4'], ['the biggest part']]) +
-    `<p class="intro">Your exam essay will be one of these two types. Each kit takes you in four steps: <b>see</b> a model, <b>build</b> the parts, <b>write</b> your own, <b>check</b> it with a model and a self-check out of 40.</p>
+  mount(roomHero('writing', [['10 marks', 1], ['Units 2 and 4'], ['the biggest part']]) +
+    `<p class="intro">Your exam essay will be one of these two types. Each kit takes you in four steps: <b>see</b> a model, <b>build</b> the parts, <b>write</b> your own, <b>check</b> it with a model and a self-check out of 10.</p>
     <div class="kits stagger">${KITS.map(K => { const d = kitDone(K.id); return `<a class="kit" href="#/s/writing/k/${K.id}/${['see', 'build', 'write', 'check'].find(s => !d[s]) || 'check'}" style="background:linear-gradient(150deg,${K.color},color-mix(in srgb, ${K.color} 55%, #2A1236))"><span class="u">${K.unit.toUpperCase()}</span><span class="e">${K.emoji}</span><b>${K.title}</b><small>${K.short}</small><span class="steps4">${KITSTEPS.map(([s]) => `<i class="${d[s] ? 'on' : ''}"></i>`).join('')}</span></a>`; }).join('')}</div>
     <div class="lbl">Quick practice</div><div class="path stagger">
       ${pcard({ href: '#/s/writing/q/scatter', emoji: '🧩', title: 'Scattered sentences', sub: 'Put a paragraph in the right order', stat: statOf('writing', 'q_scatter') })}
@@ -554,16 +554,16 @@ function writePad(host, K, onFinish) {
   $('#fin', host).onclick = onFinish;
 }
 const RUBRIC = [['Task', 'I answered the question fully and stayed on the topic.'], ['Organization', 'Clear paragraphs, topic sentences and linkers.'], ['Vocabulary', 'Unit words, word partners and correct spelling.'], ['Grammar', 'Correct sentences, tenses and punctuation.']];
-function rubricHTML(id) { const v = store.get('rub_' + id, [5, 5, 5, 5]); return `<div class="rubric">${RUBRIC.map(([t, d], i) => `<div class="rr"><b>${t} <span id="rv${i}">${v[i]} / 10</span></b><small>${d}</small><input type="range" min="0" max="10" value="${v[i]}" data-i="${i}"></div>`).join('')}</div><div class="score40" style="margin-top:12px"><div>My estimate</div><div class="big"><span id="r40">${v.reduce((a, b) => a + b, 0)}</span> / 40</div><div>= <b id="r10">${(v.reduce((a, b) => a + b, 0) / 4).toFixed(1)}</b> / 10 in the exam</div></div>`; }
-function bindRubric(host, id, cb) { $$('input[type=range]', host).forEach(inp => inp.oninput = () => { const v = $$('input[type=range]', host).map(x => +x.value); store.set('rub_' + id, v); $('#rv' + inp.dataset.i, host).textContent = `${inp.value} / 10`; const t = v.reduce((a, b) => a + b, 0); $('#r40', host).textContent = t; $('#r10', host).textContent = (t / 4).toFixed(1); cb && cb(t); }); }
+function rubricHTML(id) { const v = store.get('rubB_' + id, [1.5, 1.5, 1.5, 1.5]); const t = v.reduce((a, b) => a + b, 0); return `<div class="rubric">${RUBRIC.map(([n, d], i) => `<div class="rr"><b>${n} <span id="rv${i}">${v[i]} / 2.5</span></b><small>${d}</small><input type="range" min="0" max="2.5" step="0.5" value="${v[i]}" data-i="${i}"></div>`).join('')}</div><div class="score40" style="margin-top:12px"><div>My estimate</div><div class="big"><span id="r10">${t}</span> / 10</div></div>`; }
+function bindRubric(host, id, cb) { $$('input[type=range]', host).forEach(inp => inp.oninput = () => { const v = $$('input[type=range]', host).map(x => +x.value); store.set('rubB_' + id, v); $('#rv' + inp.dataset.i, host).textContent = `${inp.value} / 2.5`; const t = v.reduce((a, b) => a + b, 0); $('#r10', host).textContent = t; cb && cb(t); }); }
 function checkPage(host, K) {
   const T = K.task, saved = store.get('w2_' + K.id, { text: '' });
   host.innerHTML = `<div class="card"><h3>Compare with the model</h3><p class="hint">Look at the colours: does your writing have every part?</p>${T.model.map(p => `<p class="para">${p.map(([t, r]) => `<span class="s ${r}">${t}</span>`).join(' ')}</p>`).join('')}</div>
     ${saved.text ? `<details class="card"><summary><b>My writing</b></summary><div class="checklist" style="margin:8px 0">${evalChecks(T, saved.text).map(([l, ok]) => `<div class="${ok ? 'yes' : ''}">${l}</div>`).join('')}</div><p style="white-space:pre-line">${esc(saved.text)}</p></details>` : ''}
-    <div class="card"><h3>Self-check out of 40</h3><p class="hint">Be honest. This is an estimate to help you improve; your teacher gives the real mark.</p>${rubricHTML(K.id)}</div>
+    <div class="card"><h3>Self-check out of 10</h3><p class="hint">Be honest. This is an estimate to help you improve; your teacher gives the real mark.</p>${rubricHTML(K.id)}</div>
     <div class="row"><a class="btn" href="#/s/writing/k/${K.id}/write">Improve my writing</a><a class="btn ghost" href="#/s/writing">Back to the Study</a></div>`;
   markKit(K.id, 'check');
-  bindRubric(host, K.id, t => saveScore('writing', 'kit_' + K.id, Math.round(t / 40 * 100)));
+  bindRubric(host, K.id, t => saveScore('writing', 'kit_' + K.id, Math.round(t / 10 * 100)));
 }
 
 // ================= GRAMMAR =================
@@ -684,7 +684,7 @@ function examRoom(r) {
   mount(roomHero('exam', [['60 marks', 1], ['5 parts'], ['about 90 minutes']]) +
     `<div class="card"><h2>👑 The full mock exam</h2><p>The same parts and marks as the real exam. Each time you start, you get new questions.</p>
       <table class="xtable">${X.parts.map(p => `<tr><td>${p.name}<br><small class="muted">${p.units}</small></td><td>${p.marks}${p.raw ? `<small class="muted"> (from ${p.raw})</small>` : ''}</td></tr>`).join('')}<tr class="tot"><td>Total</td><td>${X.total}</td></tr></table>
-      <p class="hint">Use headphones for listening. For writing, you write in the box and give yourself a self-check mark out of 40.</p></div>
+      <p class="hint">Use headphones for listening. For writing, you write in the box and give yourself a self-check mark out of 10.</p></div>
     ${cta('#/s/exam/go', 'Start the mock exam', 'Listening → Reading → Grammar → Vocabulary → Writing', 'exam')}
     <div class="card"><h3>My mock exams</h3>${hist.slice(-6).reverse().map(h => `<div class="ex">${h.d} · <b>${h.s} / 60</b> (${Math.round(h.s / 60 * 100)}%)</div>`).join('') || '<p class="hint">No mock exam yet.</p>'}</div>`);
 }
@@ -700,10 +700,10 @@ function examRun() {
     if (P.kind === 'listening') { host.innerHTML = head(P) + '<div id="pp"></div>'; return listenTest($('#pp', host), { ...P.test, q: P.q }, { onDone: pct => { marks[k] = [P.name, scale(pct), P.marks]; nextBtn($('#pp', host)); } }); }
     if (P.kind === 'reading') { host.innerHTML = head(P) + '<div id="pp"></div>'; return readTest($('#pp', host), P.test, { sliceQ: P.q, onDone: pct => { marks[k] = [P.name, scale(pct), P.marks]; nextBtn($('#pp', host)); } }); }
     if (P.kind === 'grammar' || P.kind === 'vocab') { host.innerHTML = head(P) + '<div id="pp"></div>'; return runQuiz($('#pp', host), { title: P.name, questions: P.q, mode: 'exam', intro: `${P.q.length} questions, one mark each.`, onDone: pct => { marks[k] = [P.name, Math.round(pct / 100 * P.q.length), P.marks]; nextBtn($('#pp', host)); } }); }
-    if (P.kind === 'writing') { const K = P.kit; host.innerHTML = head(P) + '<div id="pp"></div><div class="card"><h3>Self-check out of 40</h3><p class="hint">Read your writing again, then give yourself an honest mark. Your teacher gives the real mark.</p><div id="rb"></div></div><div class="row" style="justify-content:center"><button class="btn" id="done">See my results ' + ICON('next') + '</button></div>';
+    if (P.kind === 'writing') { const K = P.kit; host.innerHTML = head(P) + '<div id="pp"></div><div class="card"><h3>Self-check out of 10</h3><p class="hint">Read your writing again, then give yourself an honest mark. Your teacher gives the real mark.</p><div id="rb"></div></div><div class="row" style="justify-content:center"><button class="btn" id="done">See my results ' + ICON('next') + '</button></div>';
       writePad($('#pp', host), K, () => { $('#rb', host).scrollIntoView({ behavior: 'smooth' }); });
       $('#fin', host).innerHTML = 'Go to the self-check'; $('#rb', host).innerHTML = rubricHTML('exam_' + K.id); bindRubric($('#rb', host), 'exam_' + K.id);
-      $('#done', host).onclick = () => { const v = store.get('rub_exam_' + K.id, [5, 5, 5, 5]); marks[k] = [P.name + ' (self-check)', Math.round(v.reduce((a, b) => a + b, 0) / 4 * 2) / 2, 10]; k++; step(); window.scrollTo(0, 0); }; }
+      $('#done', host).onclick = () => { const v = store.get('rubB_exam_' + K.id, [1.5, 1.5, 1.5, 1.5]); marks[k] = [P.name + ' (self-check)', v.reduce((a, b) => a + b, 0), 10]; k++; step(); window.scrollTo(0, 0); }; }
   };
   const results = () => {
     const tot = marks.reduce((a, m) => a + (m ? m[1] : 0), 0), pct = Math.round(tot / 60 * 100);
