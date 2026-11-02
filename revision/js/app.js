@@ -29,6 +29,14 @@ const ROOMS = {
   plan:      { name: 'My Bedroom', sub: 'My study plan', ic: '🛏️', col: '#E06AA6', skill: 'Plan', intro: 'Choose your plan colour (your teacher will tell you which one), follow the steps and watch your progress grow.' }
 };
 const ROOM_ORDER = ['writing', 'grammar', 'vocab', 'reading', 'listening', 'speaking', 'exam', 'plan'];
+// ---------- unit focus: Units 2 and 3 first, Unit 1 as quick review ----------
+const unitsOf = x => x.u || ((x.unit || x.src || '').match(/[123]/g) || []).map(Number);
+const isFocus = x => { const u = unitsOf(x); return !u.length || u.some(n => n > 1); };
+function focusGrid(items, render) {
+  const f = items.filter(isFocus), r = items.filter(x => !isFocus(x));
+  return `<div class="sec"><span class="sec-tag">★ Focus</span><b>Units 2 and 3</b><small>Most of the exam comes from here</small></div><div class="topic-grid">${f.map(render).join('')}</div>` +
+    (r.length ? `<div class="sec rev"><span class="sec-tag">Quick review</span><b>Unit 1</b><small>Short revision only</small></div><div class="topic-grid review">${r.map(render).join('')}</div>` : '');
+}
 
 // ---------- scores ----------
 const getScores = () => store.get('scores', {});
@@ -67,7 +75,7 @@ function outside() {
   const name = me();
   view.innerHTML = `
   <section class="outside-hero">
-    <span class="tag">PSE 2A · Units 1 to 3 · Summative revision</span>
+    <span class="tag">PSE 2A · Summative revision · Focus on Units 2 and 3</span>
     <h1>The Revision <em>House</em></h1>
     <div class="by">Prepared by Mr. Abdelkader Soltani</div>
   </section>
@@ -98,7 +106,7 @@ function hall() {
   view.innerHTML = `
   <div class="room-head"><div class="art">${ART.room('hall')}</div><div><h1>The Hall</h1><p>Choose a room. Each room has its own colours, lessons and games.</p></div></div>
   <div class="card"><div class="hall-intro"><div class="guide">${ART.girl({ wave: true, bob: true })}</div>
-    <div class="bubble">Hi ${esc(name)}! Start with the <b>Writing Study</b> and the <b>Grammar Garage</b>: they give the most marks. Finish every room with <b>Exam mode</b> and aim for 90% or more. 🌟</div></div></div>
+    <div class="bubble">Hi ${esc(name)}! Start with the <b>Writing Study</b> and the <b>Grammar Garage</b>: they give the most marks. Focus on <b>Units 2 and 3</b>: most of the exam comes from them. Unit 1 is quick review. Finish every room with <b>Exam mode</b> and aim for 90% or more. 🌟</div></div></div>
   <div class="doors">${ROOM_ORDER.map(id => { const r = ROOMS[id]; const b = id === 'plan' ? null : roomBest(id);
     return `<button class="door" data-room="${id}"><div class="frame"><div class="leaf" style="background:linear-gradient(160deg, ${r.col}, ${shade(r.col)})">
       <span class="ic">${ICON(id)}</span><span class="nm">${r.name}</span><span class="sk">${r.skill}</span></div></div>${b != null ? `<span class="score">${b}%</span>` : ''}</button>`; }).join('')}</div>`;
@@ -291,23 +299,24 @@ const ANIM = {
 // ================= GRAMMAR GARAGE =================
 function grammarRoom(sub, arg) {
   const G = window.GRAMMAR;
-  const all = () => G.topics.flatMap(t => t.q.map(q => ({ ...q, pre: `🔧 ${t.title}` })));
+  const qsOf = ts => ts.flatMap(t => t.q.map(q => ({ ...q, pre: `🔧 ${t.title}` })));
+  const all = () => shuffle([...pick(qsOf(G.topics.filter(isFocus)), 8), ...pick(qsOf(G.topics.filter(t => !isFocus(t))), 2)]);
   view.innerHTML = roomHead('grammar') + tabs('grammar', [['learn', '📚 Toolboxes'], ['practise', '✏️ Practise a topic'], ['random', '🎲 Random 10'], ['exam', '📝 Exam mode'], ['chat', '💬 Group chat']], sub || 'learn') + '<div id="rb"></div>';
   const rb = $('#rb');
   if (!sub || sub === 'learn') {
     if (arg) { const t = G.topics.find(x => x.id === arg); return grammarLesson(rb, t); }
     rb.innerHTML = `<div class="card"><h2>Choose a toolbox</h2><p class="hint">Each toolbox explains one grammar point from Units 1 to 3 in three ways: the rule with colours, a moving picture, and examples with common mistakes. Then practise it.</p></div>
-      <div class="topic-grid">${G.topics.map(t => `<button class="topic" data-t="${t.id}"><span class="ribbon src">${t.src}</span><b><i class="emo">${t.emoji}</i>${t.title}</b><small>${t.short}</small></button>`).join('')}</div>`;
+      ${focusGrid(G.topics, t => `<button class="topic" data-t="${t.id}"><span class="ribbon src">${t.src}</span><b><i class="emo">${t.emoji}</i>${t.title}</b><small>${t.short}</small></button>`)}`;
     $$('.topic', rb).forEach(b => b.onclick = () => go(`#/room/grammar/learn/${b.dataset.t}`));
   } else if (sub === 'practise') {
     if (arg) { const t = G.topics.find(x => x.id === arg); return runQuiz(rb, { title: `${t.emoji} ${t.title}`, questions: pick(t.q, 10), key: 'p_' + t.id, room: 'grammar', reshuffle: () => pick(t.q, 10) }); }
-    rb.innerHTML = `<div class="card"><h2>Practise one topic</h2><p class="hint">10 questions with instant feedback and an explanation for every answer.</p></div><div class="topic-grid">${G.topics.map(t => `<button class="topic" data-t="${t.id}"><b><i class="emo">${t.emoji}</i>${t.title}</b><small>${t.q.length} questions in the bank${bestTxt('grammar', 'p_' + t.id)}</small></button>`).join('')}</div>`;
+    rb.innerHTML = `<div class="card"><h2>Practise one topic</h2><p class="hint">10 questions with instant feedback and an explanation for every answer.</p></div>${focusGrid(G.topics, t => `<button class="topic" data-t="${t.id}"><b><i class="emo">${t.emoji}</i>${t.title}</b><small>${t.q.length} questions in the bank${bestTxt('grammar', 'p_' + t.id)}</small></button>`)}`;
     $$('.topic', rb).forEach(b => b.onclick = () => go(`#/room/grammar/practise/${b.dataset.t}`));
   } else if (sub === 'random') {
-    runQuiz(rb, { title: '🎲 Random 10: all grammar', questions: pick(all(), 10), key: 'random', room: 'grammar', reshuffle: () => pick(all(), 10) });
+    runQuiz(rb, { title: '🎲 Random 10: all grammar', questions: all(), key: 'random', room: 'grammar', intro: '8 questions from Units 2 and 3, 2 from Unit 1.', reshuffle: all });
   } else if (sub === 'exam') {
-    const mk = () => G.topics.flatMap(t => pick(t.q, 2));
-    runQuiz(rb, { title: '📝 Grammar exam (Units 1 to 3)', questions: mk(), mode: 'exam', key: 'exam', room: 'grammar', timer: 20, intro: 'Two questions from every toolbox. No feedback until you submit, just like the real exam.', reshuffle: mk });
+    const mk = () => { const F = G.topics.filter(isFocus), RV = G.topics.filter(t => !isFocus(t)); const a = F.flatMap(t => pick(t.q, 2)); const used = new Set(a); const extra = pick(F.flatMap(t => t.q).filter(q => !used.has(q)), Math.max(0, 16 - a.length)); return [...a, ...extra, ...pick(RV.flatMap(t => t.q), 4)].slice(0, 20); };
+    runQuiz(rb, { title: '📝 Grammar exam (Units 1 to 3)', questions: mk(), mode: 'exam', key: 'exam', room: 'grammar', timer: 20, intro: '16 questions from Units 2 and 3 and 4 from Unit 1. No feedback until you submit, just like the real exam.', reshuffle: mk });
   } else if (sub === 'chat') chatGame(rb, window.CHATS.grammar, 'grammar');
 }
 function bestTxt(room, key) { const s = getScores()[room]; return s && s[key] != null ? ` · best ${s[key]}%` : ''; }
@@ -324,7 +333,7 @@ function vocabRoom(sub, arg) {
   const seen = store.get('seen', {});
   if (!sub || sub === 'learn') {
     if (arg) return wordCard(rb, arg);
-    rb.innerHTML = V.units.map(u => `<div class="card"><h2><i class="emo">${u.emoji}</i>${u.title}</h2><p class="hint">${u.note}</p><div class="shelf">${u.words.map(w => `<button class="jar ${seen[w.w] ? 'done' : ''}" data-w="${esc(w.w)}"><span class="e">${w.pic.split(' ')[0]}</span>${esc(w.w)}</button>`).join('')}</div></div>`).join('');
+    rb.innerHTML = V.units.map(u => `<div class="card ${u.id === 'u1' ? 'review-card' : ''}"><span class="sec-tag">${u.id === 'u1' ? 'Quick review' : '★ Focus'}</span><h2><i class="emo">${u.emoji}</i>${u.title}</h2><p class="hint">${u.note}</p><div class="shelf">${u.words.map(w => `<button class="jar ${seen[w.w] ? 'done' : ''}" data-w="${esc(w.w)}"><span class="e">${w.pic.split(' ')[0]}</span>${esc(w.w)}</button>`).join('')}</div></div>`).join('');
     $$('.jar', rb).forEach(b => b.onclick = () => go(`#/room/vocab/learn/${encodeURIComponent(b.dataset.w)}`));
   } else if (sub === 'practise') {
     if (arg) { const r = V.recipes.find(x => x.id === arg); const mk = () => r.make(); return runQuiz(rb, { title: `${r.emoji} ${r.title}`, questions: mk(), key: 'p_' + r.id, room: 'vocab', reshuffle: mk }); }
@@ -375,7 +384,7 @@ function writingRoom(sub, arg) {
   } else if (sub === 'write') {
     if (arg) return writingTask(rb, W.tasks.find(x => x.id === arg));
     rb.innerHTML = `<div class="card"><h2>Plan and write</h2><p>Follow the three steps: <b>1</b> study the model and its table, <b>2</b> write from a table that is ready for you, <b>3</b> fill the table yourself and write.</p></div>
-      <div class="topic-grid">${W.tasks.map(T => `<button class="topic" data-t="${T.id}"><span class="ribbon src">${T.step}</span><b><i class="emo">${T.emoji}</i>${T.title}</b><small>${T.short}</small></button>`).join('')}</div>`;
+      ${focusGrid(W.tasks, T => `<button class="topic" data-t="${T.id}"><span class="ribbon src">${T.step}</span><b><i class="emo">${T.emoji}</i>${T.title}</b><small>${T.short}</small></button>`)}`;
     $$('.topic', rb).forEach(b => b.onclick = () => go(`#/room/writing/write/${b.dataset.t}`));
   } else if (sub === 'exam') {
     const mk = () => W.exam();
@@ -443,7 +452,7 @@ function readingRoom(sub, arg) {
     $$('.topic', rb).forEach(b => b.onclick = () => go(`#/room/reading/learn/${b.dataset.l}`));
   } else if (sub === 'tests') {
     if (arg) return readingTest(rb, RD.tests.find(x => x.id === arg));
-    rb.innerHTML = `<div class="card"><h2>Mock reading tests</h2><p class="hint">Texts like the ones in your books, with exam questions. Read the questions first, then the text. Your mark appears when you submit.</p></div><div class="topic-grid">${RD.tests.map(T => `<button class="topic" data-t="${T.id}"><span class="ribbon src">${T.unit}</span><b><i class="emo">${T.emoji}</i>${T.title}</b><small>${T.q.length} questions · about ${T.words} words${bestTxt('reading', 't_' + T.id)}</small></button>`).join('')}</div>`;
+    rb.innerHTML = `<div class="card"><h2>Mock reading tests</h2><p class="hint">Texts like the ones in your books, with exam questions. Read the questions first, then the text. Your mark appears when you submit.</p></div>${focusGrid(RD.tests, T => `<button class="topic" data-t="${T.id}"><span class="ribbon src">${T.unit}</span><b><i class="emo">${T.emoji}</i>${T.title}</b><small>${T.q.length} questions · about ${T.words} words${bestTxt('reading', 't_' + T.id)}</small></button>`)}`;
     $$('.topic', rb).forEach(b => b.onclick = () => go(`#/room/reading/tests/${b.dataset.t}`));
   } else if (sub === 'chat') chatGame(rb, window.CHATS.reading, 'reading');
 }
@@ -490,7 +499,7 @@ function listeningRoom(sub, arg) {
     $$('.topic', rb).forEach(b => b.onclick = () => go(`#/room/listening/learn/${b.dataset.l}`));
   } else if (sub === 'tests') {
     if (arg) return listeningTest(rb, L.tests.find(x => x.id === arg));
-    rb.innerHTML = `<div class="card"><h2>Mock listening tests</h2><p class="hint">Like the exam: read the questions, listen twice, answer. The transcript opens after you submit.</p></div><div class="topic-grid">${L.tests.map(T => `<button class="topic" data-t="${T.id}"><span class="ribbon src">${T.unit}</span><b><i class="emo">${T.emoji}</i>${T.title}</b><small>${T.kind} · ${T.q.length} questions${bestTxt('listening', 't_' + T.id)}</small></button>`).join('')}</div>`;
+    rb.innerHTML = `<div class="card"><h2>Mock listening tests</h2><p class="hint">Like the exam: read the questions, listen twice, answer. The transcript opens after you submit.</p></div>${focusGrid(L.tests, T => `<button class="topic" data-t="${T.id}"><span class="ribbon src">${T.unit}</span><b><i class="emo">${T.emoji}</i>${T.title}</b><small>${T.kind} · ${T.q.length} questions${bestTxt('listening', 't_' + T.id)}</small></button>`)}`;
     $$('.topic', rb).forEach(b => b.onclick = () => go(`#/room/listening/tests/${b.dataset.t}`));
   } else if (sub === 'chat') chatGame(rb, window.CHATS.listening, 'listening');
 }
@@ -518,7 +527,7 @@ function speakingRoom(sub, arg) {
     $$('.topic', rb).forEach(b => b.onclick = () => go(`#/room/speaking/learn/${b.dataset.l}`));
   } else if (sub === 'practise') {
     if (arg) return speakTask(rb, S.tasks.find(x => x.id === arg));
-    rb.innerHTML = `<div class="card"><h2>Speaking practice</h2><p class="hint">Choose a question, plan with the colours, record yourself, listen back and get automatic feedback on your structure and language. Your recording stays on your phone.</p></div><div class="topic-grid">${S.tasks.map(T => `<button class="topic" data-t="${T.id}"><span class="ribbon src">${T.unit}</span><b><i class="emo">${T.emoji}</i>${T.title}</b><small>${T.kind} · ${T.time}</small></button>`).join('')}</div>`;
+    rb.innerHTML = `<div class="card"><h2>Speaking practice</h2><p class="hint">Choose a question, plan with the colours, record yourself, listen back and get automatic feedback on your structure and language. Your recording stays on your phone.</p></div>${focusGrid(S.tasks, T => `<button class="topic" data-t="${T.id}"><span class="ribbon src">${T.unit}</span><b><i class="emo">${T.emoji}</i>${T.title}</b><small>${T.kind} · ${T.time}</small></button>`)}`;
     $$('.topic', rb).forEach(b => b.onclick = () => go(`#/room/speaking/practise/${b.dataset.t}`));
   } else if (sub === 'chat') chatGame(rb, window.CHATS.speaking, 'speaking');
 }

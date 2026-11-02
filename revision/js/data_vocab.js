@@ -138,6 +138,8 @@ const units = [
 const ALL = units.flatMap(u => u.words.map(w => ({ ...w, unit: u.id })));
 const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const pick = (a, n) => shuffle(a).slice(0, n);
+const FOCUS = ALL.filter(w => w.unit !== 'u1'), REVIEW = ALL.filter(w => w.unit === 'u1');
+const pickW = n => shuffle([...pick(FOCUS, n - Math.round(n * .2)), ...pick(REVIEW, Math.round(n * .2))]); // 80% Units 2 and 3
 const mainPos = w => w.pos.split(/[ /(]/)[0];
 function distract(w, n, key = 'w') {
   const same = ALL.filter(x => x.w !== w.w && x.unit === w.unit && mainPos(x) === mainPos(w));
@@ -214,10 +216,10 @@ const STRESS_WORDS = ['environment', 'endangered', 'communicate', 'cooperate', '
 
 const mcq = (q, o, a, why, extra = {}) => ({ t: 'mcq', q, o, a, why, ...extra });
 const recipes = [
-  { id: 'pic', emoji: '🖼️', title: 'Guess from the picture', short: 'Look at the picture and the clue. Which word is it?', make: () => pick(ALL, 10).map(w => mcq(`<span style="font-size:34px">${w.pic}</span><br>${w.guess}`, [w.w, ...distract(w, 3)], 0, `${w.w}: ${w.def}`)) },
-  { id: 'meaning', emoji: '📖', title: 'Meaning match', short: 'Read the meaning and choose the word.', make: () => pick(ALL, 10).map(w => mcq(`Which word means: <b>${w.def}</b>?`, [w.w, ...distract(w, 3)], 0, `${w.w} (${w.pos}): ${w.ex[0].replace(/<\/?b>/g, '')}`)) },
-  { id: 'gap', emoji: '🧩', title: 'Words in sentences', short: 'Complete sentences about Saudi Arabia, the university and the world.', make: () => pick(ALL, 10).map(w => { const ans = bold(w.ex[0]); const opts = [ans, ...distract(w, 3).map(d => { const dw = ALL.find(x => x.w === d); return bold(dw.ex[0]); })]; return mcq(blank(w.ex[0]), [...new Set(opts)].length === 4 ? opts : [ans, ...distract(w, 3)], 0, `${w.w}: ${w.def}`); }) },
-  { id: 'spell', emoji: '✍️', title: 'Spell it right', short: 'Read the meaning and type the word. Spelling counts!', make: () => pick(ALL, 10).map(w => ({ t: 'gap', q: `${w.pic}<br>${w.def}<br><span class="hint">Starts with "${w.w[0]}", ${w.w.replace(/[^ -]/g, '•')}</span>`, a: [w.w], why: `${w.w} · ${w.stress}` })) },
+  { id: 'pic', emoji: '🖼️', title: 'Guess from the picture', short: 'Look at the picture and the clue. Which word is it?', make: () => pickW(10).map(w => mcq(`<span style="font-size:34px">${w.pic}</span><br>${w.guess}`, [w.w, ...distract(w, 3)], 0, `${w.w}: ${w.def}`)) },
+  { id: 'meaning', emoji: '📖', title: 'Meaning match', short: 'Read the meaning and choose the word.', make: () => pickW(10).map(w => mcq(`Which word means: <b>${w.def}</b>?`, [w.w, ...distract(w, 3)], 0, `${w.w} (${w.pos}): ${w.ex[0].replace(/<\/?b>/g, '')}`)) },
+  { id: 'gap', emoji: '🧩', title: 'Words in sentences', short: 'Complete sentences about Saudi Arabia, the university and the world.', make: () => pickW(10).map(w => { const ans = bold(w.ex[0]); const opts = [ans, ...distract(w, 3).map(d => { const dw = ALL.find(x => x.w === d); return bold(dw.ex[0]); })]; return mcq(blank(w.ex[0]), [...new Set(opts)].length === 4 ? opts : [ans, ...distract(w, 3)], 0, `${w.w}: ${w.def}`); }) },
+  { id: 'spell', emoji: '✍️', title: 'Spell it right', short: 'Read the meaning and type the word. Spelling counts!', make: () => pickW(10).map(w => ({ t: 'gap', q: `${w.pic}<br>${w.def}<br><span class="hint">Starts with "${w.w[0]}", ${w.w.replace(/[^ -]/g, '•')}</span>`, a: [w.w], why: `${w.w} · ${w.stress}` })) },
   { id: 'partners', emoji: '🤝', title: 'Word partners (collocations)', short: 'Which word goes with which? Like Assessment 3.', make: () => pick(PARTNERS, 10).map(([q, a, o]) => mcq(q, o, o.indexOf(a), `Word partner: ${q.replace('___', a.toUpperCase())}`)) },
   { id: 'forms', emoji: '🔁', title: 'Word families', short: 'Change the word in brackets to the right form.', make: () => pick(FORMS, 10).map(([q, a]) => ({ t: 'gap', q, a: [a], why: `The correct form is "${a}".` })) },
   { id: 'prefix', emoji: '🚫', title: 'Negative prefixes', short: 'un-, in-, im-, ir-, il-, dis-: which one?', make: () => pick(PREFIX, 10).map(([q, a, o]) => mcq(q, o.map(x => x + '-'), o.indexOf(a), `${a}- + the word. Tip: im- before p, ir- before r, il- before l.`)) },
