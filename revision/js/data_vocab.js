@@ -138,8 +138,7 @@ const units = [
 const ALL = units.flatMap(u => u.words.map(w => ({ ...w, unit: u.id })));
 const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const pick = (a, n) => shuffle(a).slice(0, n);
-const FOCUS = ALL.filter(w => w.unit !== 'u1'), REVIEW = ALL.filter(w => w.unit === 'u1');
-const pickW = n => shuffle([...pick(FOCUS, n - Math.round(n * .2)), ...pick(REVIEW, Math.round(n * .2))]); // 80% Units 2 and 3
+const pickW = n => pick(ALL, n); // all units (ALL grows when Unit 4 is added)
 const mainPos = w => w.pos.split(/[ /(]/)[0];
 function distract(w, n, key = 'w') {
   const same = ALL.filter(x => x.w !== w.w && x.unit === w.unit && mainPos(x) === mainPos(w));
