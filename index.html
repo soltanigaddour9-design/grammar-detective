@@ -477,6 +477,26 @@ const MISSIONS = [
     { who: 'Coach', msg: 'Final question for the new players. Build it 👇', q: 'Put the words in order.', type: 'build', tiles: ['Are', 'you', 'able to', 'climb', 'this wall', '?'],
       answer: 'Are you able to climb this wall?', noClue: true, why: 'Question with be able to: Are + you + able to + verb?' }
    ]},
+ { id: 16, cls: 'PSE 1A', day: 'Sunday 15 Nov', title: 'Route Map', group: 'Fun Run Team 🗺️', focus: 'prepositions of movement · directions · sequencers',
+   intro: [['Coach', 'We are planning the route for the university fun run 🏃‍♂️🏃‍♀️'], ['Captain', 'I wrote the directions... can you check the prepositions? 😅']],
+   items: [
+    { who: 'Captain', msg: 'Start at the gate and run [[across]] the main road for 1 km (don\'t cross it!).', q: 'Fix the preposition: follow the road.', type: 'choice', opts: ['along', 'across', 'over'], a: 0,
+      clue: 'You follow a long line (the road). You don\'t go to the other side.', why: 'along = follow a long line: run along the road.' },
+    { who: 'Coach', msg: 'Then run [[into]] the library, but don\'t go in.', q: 'Fix the preposition: next to it, then further.', type: 'choice', opts: ['past', 'into', 'through'], a: 0,
+      clue: 'You go next to the building and continue.', why: 'past = next to something, then further: run past the library.' },
+    { who: 'Reporter', msg: 'Next, crawl [[over]] the low nets on the grass 🪢', q: 'Fix the preposition: below the nets.', type: 'choice', opts: ['under', 'over', 'along'], a: 0,
+      clue: 'Low nets: you go BELOW them.', why: 'under = below: crawl under the nets (like Tough Guy).' },
+    { who: 'Fan', msg: 'After that, swim [[over]] the small lake to the other side 🏊', q: 'Fix the preposition: a flat surface, side to side.', type: 'choice', opts: ['across', 'over', 'around'], a: 0,
+      clue: 'Water is flat: from one side to the other.', why: 'across = from one side to the other (flat): swim across the lake.' },
+    { who: 'Captain', msg: 'Then run [[around]] the tunnel: in one side and out of the other.', q: 'Fix the preposition.', type: 'choice', opts: ['through', 'around', 'past'], a: 0,
+      clue: 'In one side, out of the other side.', why: 'through = in one side and out of the other: run through the tunnel.' },
+    { who: 'Coach', msg: 'Jump [[under]] the small wall, it\'s only 50 cm high!', q: 'Fix the preposition: up and down, side to side.', type: 'choice', opts: ['over', 'under', 'through'], a: 0,
+      clue: 'You go up, then down on the other side.', why: 'over = from one side to the other, going up and down: jump over the wall.' },
+    { who: 'Reporter', msg: '[[Finally]], the runners start at the main gate.', q: 'Fix the sequencer: it is the FIRST step.', type: 'choice', opts: ['First,', 'Finally,', 'After that,'], a: 0, noClue: true,
+      why: 'First, = the first step. Finally, = the last step.' },
+    { who: 'Captain', msg: 'Last step for the poster! Build it 👇', q: 'Put the words in order.', type: 'build', tiles: ['Finally', ',', 'run', 'around', 'the track', 'to the finish line', '.'],
+      answer: 'Finally, run around the track to the finish line.', noClue: true, why: 'Sequencer + comma + verb + preposition + place.' }
+   ]},
  // PSE1A-END
 ];
 
