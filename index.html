@@ -497,6 +497,26 @@ const MISSIONS = [
     { who: 'Captain', msg: 'Last step for the poster! Build it 👇', q: 'Put the words in order.', type: 'build', tiles: ['Finally', ',', 'run', 'around', 'the track', 'to the finish line', '.'],
       answer: 'Finally, run around the track to the finish line.', noClue: true, why: 'Sequencer + comma + verb + preposition + place.' }
    ]},
+ { id: 17, cls: 'PSE 1A', day: 'Monday 16 Nov', title: 'Triathlon City', group: 'Sydney Tri Crew 🚴', focus: 'analyzing the diagram · prepositions · subject and verb agreement',
+   intro: [['Reporter', 'Live from Sydney! 🇦🇺 The triathlon starts in 10 minutes!'], ['Coach', 'Check my race notes before I post them, please 🙏']],
+   items: [
+    { who: 'Coach', msg: 'The athletes [[run]] 1,500 metres across the bay.', q: 'Fix the verb. Look at the key: blue line in the water.', type: 'choice', opts: ['swim', 'run', 'cycle'], a: 0,
+      clue: 'The blue dotted line is in the water.', why: 'Blue = swim: they swim 1,500 metres (1 lap).' },
+    { who: 'Fan', msg: 'They cycle [[10 kilometres]] in 3 laps 🚴', q: 'Fix the distance from the key.', type: 'choice', opts: ['40 kilometres', '10 kilometres', '1,500 metres'], a: 0,
+      clue: 'Yellow line in the key.', why: 'Cycle: 40 km (3 laps). Run: 10 km (2 laps).' },
+    { who: 'Reporter', msg: 'Next, they cycle [[over]] the tunnel.', q: 'Fix the preposition.', type: 'choice', opts: ['through', 'over', 'along'], a: 0,
+      clue: 'A tunnel: in one side and out of the other.', why: 'through the tunnel; over / across the bridge.' },
+    { who: 'Captain', msg: 'The race [[start]] near the Opera House.', q: 'Fix the verb.', type: 'choice', opts: ['starts', 'start', 'starting'], a: 0,
+      clue: 'The race = one thing → verb + s.', why: 'Singular subject → verb + s: The race starts...' },
+    { who: 'Fan', msg: 'The athletes [[swims]] really fast! 🏊', q: 'Fix the verb.', type: 'choice', opts: ['swim', 'swims', 'swiming'], a: 0,
+      clue: 'The athletes = many → no s.', why: 'Plural subject → no s: The athletes swim.' },
+    { who: 'Coach', msg: 'Swimming and cycling [[is]] my favourite parts.', q: 'Fix the verb.', type: 'choice', opts: ['are', 'is', 'be'], a: 0,
+      clue: 'A and B = two things.', why: 'A and B = plural: Swimming and cycling are...' },
+    { who: 'Reporter', msg: 'The information about the course [[are]] on the website.', q: 'Fix the verb.', type: 'choice', opts: ['is', 'are', 'were'], a: 0, noClue: true,
+      why: 'information is uncountable → singular verb: The information is...' },
+    { who: 'Captain', msg: 'Last line for the live report. Build it 👇', q: 'Put the words in order.', type: 'build', tiles: ['Finally', ',', 'the runners', 'run', 'along', 'the road', 'to the finish', '.'],
+      answer: 'Finally, the runners run along the road to the finish.', noClue: true, why: 'Sequencer + comma + subject + verb (agreement) + preposition + place.' }
+   ]},
  // PSE1A-END
 ];
 
