@@ -517,6 +517,26 @@ const MISSIONS = [
     { who: 'Captain', msg: 'Last line for the live report. Build it 👇', q: 'Put the words in order.', type: 'build', tiles: ['Finally', ',', 'the runners', 'run', 'along', 'the road', 'to the finish', '.'],
       answer: 'Finally, the runners run along the road to the finish.', noClue: true, why: 'Sequencer + comma + subject + verb (agreement) + preposition + place.' }
    ]},
+ { id: 18, cls: 'PSE 1A', day: 'Tuesday 17 Nov', title: 'Gym Steps', group: 'Gym Crew 🏋️', focus: 'ordering a process · unrelated information · spelling',
+   intro: [['Coach', 'New poster for the gym: "How to lift a weight safely" 🏋️'], ['Captain', 'I wrote it... but something is wrong. Help! 😬']],
+   items: [
+    { who: 'Captain', msg: '[[Finally]], lift the weight onto your shoulders.', q: 'This is the FIRST step. Fix the transition word.', type: 'choice', opts: ['First,', 'Finally,', 'After that,'], a: 0,
+      clue: 'Which word starts a process?', why: 'First, = the first step. Finally, = the last step.' },
+    { who: 'Coach', msg: 'Next[[ ]]lift the weight above your head.', q: 'What is missing after Next?', type: 'choice', opts: [', (a comma)', '. (a full stop)', 'nothing'], a: 0, full: true,
+      clue: 'Look at the rule on page 118.', why: 'Transition word at the beginning + a comma: Next, lift the weight...' },
+    { who: 'Fan', msg: 'Then, hold it above your head. [[My brother goes to the gym every day.]]', q: 'Task: HOW to lift a weight. Is the second sentence related?', type: 'choice', opts: ['No: it is a personal story. Delete it.', 'Yes: it is a step.', 'Yes: it is advice.'], a: 0, full: true,
+      clue: 'Is it a step or advice for a step?', why: 'A personal story is not related to HOW to lift a weight: delete it.' },
+    { who: 'Reporter', msg: 'It is important to keep your back straight.', q: 'Related to the task (how to lift a weight)?', type: 'choice', opts: ['Yes: it is advice for a step.', 'No: it is an opinion.', 'No: it is history.'], a: 0, full: true,
+      clue: '"It is important to..." gives advice.', why: 'Advice for a step is related: keep it.' },
+    { who: 'Captain', msg: 'Weightlifting is a very [[chalenging]] sport.', q: 'Fix the spelling.', type: 'choice', opts: ['challenging', 'chalenging', 'challanging'], a: 0,
+      clue: 'chaLLenge + ing.', why: 'challenging: double l, then e.' },
+    { who: 'Coach', msg: 'There was an [[acident]] in the gym, but nobody was hurt.', q: 'Fix the spelling.', type: 'choice', opts: ['accident', 'acident', 'accidant'], a: 0,
+      clue: 'Double c.', why: 'accident: double c, -dent.' },
+    { who: 'Fan', msg: '[[Finaly]], drop the weight to the ground.', q: 'Fix the spelling.', type: 'choice', opts: ['Finally,', 'Finaly,', 'Finnaly,'], a: 0, noClue: true,
+      why: 'final + ly = finally (double l).' },
+    { who: 'Captain', msg: 'Last line of the poster. Build it 👇', q: 'Put the words in order.', type: 'build', tiles: ['After that', ',', 'hold', 'the weight', 'above your head', 'for 3 seconds', '.'],
+      answer: 'After that, hold the weight above your head for 3 seconds.', noClue: true, why: 'Transition word + comma + verb + object + place + time.' }
+   ]},
  // PSE1A-END
 ];
 
