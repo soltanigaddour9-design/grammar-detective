@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Exit Ticket · EP Riyadh</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--bg:#F1F5FB;--ink:#14233D;--mut:#586A86;--dark:#0B1F3F;--acc:#FFC531;--go:#0FA35B;--no:#E23D4B;--card:#fff;--soft:#E3EAF5}
+body[data-k="rose"]{--bg:#FFF5F8;--ink:#3A1D2E;--mut:#8A6578;--dark:#7A1F4B;--acc:#FFD1DC;--go:#2E9E7A;--no:#D6336C;--soft:#FBE3EC}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+header{background:var(--dark);color:#fff;padding:18px 20px 22px;border-radius:0 0 26px 26px}
+header .k{color:var(--acc);font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+header h1{margin:4px 0 0;font-size:24px;line-height:1.15}
+header p{margin:6px 0 0;color:#C9DCFF;font-size:14px}
+main{max-width:640px;margin:0 auto;padding:18px 16px 60px}
+.card{background:var(--card);border-radius:20px;padding:20px;box-shadow:0 6px 20px rgba(11,31,63,.10);margin-bottom:16px}
+.bar{height:8px;background:var(--soft);border-radius:8px;overflow:hidden;margin:2px 0 16px}.bar i{display:block;height:100%;background:var(--go);border-radius:8px;transition:width .35s}
+.q{font-size:20px;font-weight:800;margin:6px 0 16px;line-height:1.3}.n{color:var(--mut);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+button{font:inherit;cursor:pointer;border:0}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--bg);border:2px solid var(--soft);border-radius:16px;padding:15px 16px;margin:0 0 12px;font-weight:700;color:var(--ink);min-height:58px}
+.opt b{flex:0 0 34px;height:34px;border-radius:50%;background:var(--dark);color:var(--acc);display:grid;place-items:center;font-size:15px}
+.opt[aria-pressed="true"]{border-color:var(--dark);background:#fff;box-shadow:0 0 0 3px rgba(255,197,49,.55)}
+.go{display:block;width:100%;background:var(--dark);color:#fff;font-weight:800;border-radius:16px;padding:16px;font-size:18px}
+.go:disabled{opacity:.35}
+input[type=text]{width:100%;font:inherit;font-weight:700;padding:15px 16px;border-radius:16px;border:2px solid var(--soft);background:var(--bg);color:var(--ink);margin:6px 0 16px}
+input:focus,button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.score{font-size:64px;font-weight:900;line-height:1;color:var(--dark)}.score small{font-size:24px;color:var(--mut)}
+.rev{border-top:1px solid var(--soft);padding:14px 0 2px}.rev .t{font-weight:800}.ok{color:var(--go);font-weight:800}.ko{color:var(--no);font-weight:800}.why{color:var(--mut);font-size:15px;margin-top:2px}
+.small{color:var(--mut);font-size:13px;text-align:center;margin-top:14px}
+.faces{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.faces .opt{flex-direction:column;text-align:center;gap:6px;padding:14px 6px;font-size:14px}.faces span{font-size:30px}
+table{width:100%;border-collapse:collapse;font-size:15px}th,td{padding:10px 8px;border-bottom:1px solid var(--soft);text-align:center}th:first-child,td:first-child{text-align:left}
+td.g{background:#DDF5E8;color:#0B6B3C;font-weight:800}td.r{background:#FCE1E4;color:#A61E2C;font-weight:800}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}.tools button{background:var(--soft);color:var(--ink);font-weight:700;border-radius:12px;padding:9px 14px;font-size:14px}
+.dot{font-size:13px;font-weight:700;color:var(--mut)}.dot i{display:inline-block;width:9px;height:9px;border-radius:50%;background:#bbb;margin-right:6px}.dot.on i{background:var(--go)}
+body.wide main{max-width:1000px}
+</style>
+</head>
+<body>
+<header><div class="k" id="k">Exit ticket</div><h1 id="h">Exit ticket</h1><p id="p"></p></header>
+<main id="app"></main>
+<script src="tickets.js?v=1"></script>
+<script>
+const P = new URLSearchParams(location.search), id = P.get('t') || '', TK = TICKETS[id];
+const TOPIC = 'https://ntfy.sh/gd-exit-r8k2m6x4vq9tzp' + (P.get('room') ? '-' + P.get('room').replace(/[^a-z0-9]/gi, '').slice(0, 12) : '');
+const app = document.getElementById('app'), $ = (q, r) => (r || app).querySelector(q);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const store = { get(k, d) { try { const v = localStorage.getItem('xt_' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem('xt_' + k, JSON.stringify(v)); } catch (e) {} } };
+const FACES = [['🟢', 'I can do it'], ['🟡', 'I need more practice'], ['🔴', 'I need help']];
+function head(k, h, p) { document.getElementById('k').textContent = k; document.getElementById('h').textContent = h; document.getElementById('p').textContent = p || ''; }
+
+function list() {
+  head('EP Riyadh · AlMaarefa', 'Exit tickets', 'Choose a lesson.');
+  app.innerHTML = '<div class="card">' + Object.keys(TICKETS).map(k => `<p><a href="?t=${k}"><b>${esc(TICKETS[k].cls)} · ${esc(TICKETS[k].title)}</b></a><br><span class="why">${esc(TICKETS[k].date)} · <a href="?board&t=${k}">teacher board</a></span></p>`).join('') + '</div>';
+}
+function student() {
+  document.body.dataset.k = TK.skin || ''; head(TK.cls + ' · ' + TK.date, TK.title, 'Five questions. Work alone. No books.');
+  let name = store.get('name', ''), i = -1, ans = [], conf = -1, sid = store.get('sid', '');
+  if (!sid) { sid = Math.random().toString(36).slice(2, 10); store.set('sid', sid); }
+  const send = o => { try { fetch(TOPIC, { method: 'POST', body: JSON.stringify({ v: 1, t: id, s: sid, n: name, ...o }), keepalive: true }).catch(() => {}); } catch (e) {} };
+  function start() {
+    app.innerHTML = `<div class="card"><div class="n">Before you start</div><div class="q">What is your first name?</div><input type="text" id="nm" maxlength="20" autocomplete="given-name" placeholder="Your first name" value="${esc(name)}"><button class="go" id="go">Start</button><p class="small">Only your first name and your answers are sent to your teacher.</p></div>`;
+    const nm = $('#nm'), go = $('#go'); const chk = () => go.disabled = !nm.value.trim(); chk(); nm.oninput = chk;
+    go.onclick = () => { name = nm.value.trim().slice(0, 20); store.set('name', name); i = 0; ask(); };
+  }
+  function ask() {
+    const q = TK.qs[i]; let pick = -1;
+    app.innerHTML = `<div class="bar"><i style="width:${i / (TK.qs.length + 1) * 100}%"></i></div><div class="card"><div class="n">Question ${i + 1} of ${TK.qs.length}</div><div class="q">${esc(q.q)}</div>${q.o.map((o, j) => `<button class="opt" data-j="${j}" aria-pressed="false"><b>${'ABC'[j]}</b><span>${esc(o)}</span></button>`).join('')}<button class="go" id="go" disabled>${i < TK.qs.length - 1 ? 'Next question' : 'Next'}</button></div>`;
+    app.querySelectorAll('.opt').forEach(b => b.onclick = () => { pick = +b.dataset.j; app.querySelectorAll('.opt').forEach(x => x.setAttribute('aria-pressed', x === b)); $('#go').disabled = false; });
+    $('#go').onclick = () => { ans[i] = pick; i++; i < TK.qs.length ? ask() : feel(); scrollTo(0, 0); };
+  }
+  function feel() {
+    app.innerHTML = `<div class="bar"><i style="width:${TK.qs.length / (TK.qs.length + 1) * 100}%"></i></div><div class="card"><div class="n">Last question</div><div class="q">How do you feel about today's goals?</div><div class="faces">${FACES.map((f, j) => `<button class="opt" data-j="${j}" aria-pressed="false"><span>${f[0]}</span>${f[1]}</button>`).join('')}</div><button class="go" id="go" disabled style="margin-top:6px">See my score</button></div>`;
+    app.querySelectorAll('.opt').forEach(b => b.onclick = () => { conf = +b.dataset.j; app.querySelectorAll('.opt').forEach(x => x.setAttribute('aria-pressed', x === b)); $('#go').disabled = false; });
+    $('#go').onclick = () => { done(); scrollTo(0, 0); };
+  }
+  function done() {
+    const sc = TK.qs.reduce((n, q, j) => n + (ans[j] === q.a ? 1 : 0), 0); send({ a: ans, sc, c: conf });
+    head(TK.cls + ' · ' + TK.date, sc === TK.qs.length ? 'Full marks, ' + name + '!' : 'Well done, ' + name + '!', 'Show this screen to your teacher.');
+    app.innerHTML = `<div class="card" style="text-align:center"><div class="n">Your score</div><div class="score">${sc}<small> / ${TK.qs.length}</small></div><p class="why">${FACES[conf][0]} ${FACES[conf][1]}</p></div><div class="card"><div class="n">Check your answers</div>${TK.qs.map((q, j) => `<div class="rev"><div class="t">${j + 1}. ${esc(q.q)}</div><div class="${ans[j] === q.a ? 'ok' : 'ko'}">${ans[j] === q.a ? '✓' : '✗'} You: ${esc(q.o[ans[j]])}</div>${ans[j] === q.a ? '' : `<div class="ok">✓ Answer: ${esc(q.o[q.a])}</div>`}<div class="why">${esc(q.w)}</div></div>`).join('')}</div>`;
+  }
+  start();
+}
+function board() {
+  document.body.classList.add('wide'); document.body.dataset.k = TK.skin || '';
+  head('Teacher board · ' + TK.cls + ' · ' + TK.date, TK.title, 'Answers arrive live. Keep this page open during the exit ticket.');
+  const CK = 'cut_' + id; let cut = store.get(CK, 0), rows = {}, seen = new Set(), es;
+  app.innerHTML = `<div class="tools"><span class="dot" id="dot"><i></i><span>Connecting…</span></span><button id="clr">Clear board</button><button id="key">Show answer key</button><span class="why">Student link: ${esc(location.origin + location.pathname)}?t=${esc(id)}</span></div><div class="card" id="tb"></div><div class="card" id="sm"></div><div class="card" id="ky" hidden></div>`;
+  $('#ky').innerHTML = '<div class="n">Answer key</div>' + TK.qs.map((q, j) => `<div class="rev"><div class="t">${j + 1}. ${esc(q.q)}</div><div class="ok">${'ABC'[q.a]}. ${esc(q.o[q.a])}</div><div class="why">${esc(q.w)}</div></div>`).join('');
+  $('#key').onclick = () => { $('#ky').hidden = !$('#ky').hidden; };
+  $('#clr').onclick = () => { cut = Date.now(); store.set(CK, cut); rows = {}; draw(); };
+  function draw() {
+    const L = Object.values(rows).sort((a, b) => a.T - b.T), n = TK.qs.length;
+    $('#tb').innerHTML = L.length ? `<table><tr><th>Student</th>${TK.qs.map((q, j) => `<th>Q${j + 1}</th>`).join('')}<th>Score</th><th>Feels</th></tr>${L.map(r => `<tr><td><b>${esc(r.n)}</b></td>${TK.qs.map((q, j) => `<td class="${r.a[j] === q.a ? 'g' : 'r'}">${'ABC'[r.a[j]] || '?'}</td>`).join('')}<td><b>${r.sc}/${n}</b></td><td>${(FACES[r.c] || ['?'])[0]}</td></tr>`).join('')}</table>` : '<p class="why">No answers yet. Students scan the QR code on the last slide.</p>';
+    $('#sm').innerHTML = '<div class="n">Question by question</div>' + TK.qs.map((q, j) => { const ok = L.filter(r => r.a[j] === q.a).length, bad = L.filter(r => r.a[j] !== q.a).map(r => `${esc(r.n)}: "${esc(q.o[r.a[j]] || '?')}"`); return `<div class="rev"><div class="t">${j + 1}. ${esc(q.q)}</div><div class="${ok === L.length ? 'ok' : 'ko'}">${ok} of ${L.length} correct</div>${bad.length ? `<div class="why">Wrong answers: ${bad.join(' · ')}</div>` : ''}</div>`; }).join('');
+  }
+  function connect() {
+    if (es) es.close(); es = new EventSource(`${TOPIC}/sse?since=${cut ? Math.floor(cut / 1000) : '12h'}`);
+    const dot = (on, t) => { $('#dot').className = 'dot' + (on ? ' on' : ''); $('#dot span').textContent = t; };
+    es.onopen = () => dot(true, 'Live'); es.onerror = () => dot(false, 'Reconnecting…');
+    es.onmessage = ev => { try { const d = JSON.parse(ev.data); if (d.event !== 'message' || seen.has(d.id)) return; seen.add(d.id); const T = d.time * 1000; if (T < cut) return; const o = JSON.parse(d.message); if (!o || o.v !== 1 || o.t !== id || !Array.isArray(o.a)) return; rows[o.s] = { ...o, T }; draw(); } catch (e) {} };
+  }
+  draw(); connect();
+}
+if (!TK) list(); else if (P.has('board')) board(); else student();
+</script>
+</body>
+</html>
