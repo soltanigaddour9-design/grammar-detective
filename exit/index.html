@@ -40,7 +40,7 @@ body.wide main{max-width:1000px}
 <body>
 <header><div class="k" id="k">Exit ticket</div><h1 id="h">Exit ticket</h1><p id="p"></p></header>
 <main id="app"></main>
-<script src="tickets.js?v=1"></script>
+<script src="tickets.js?v=2"></script>
 <script>
 const P = new URLSearchParams(location.search), id = P.get('t') || '', TK = TICKETS[id];
 const TOPIC = 'https://ntfy.sh/gd-exit-r8k2m6x4vq9tzp' + (P.get('room') ? '-' + P.get('room').replace(/[^a-z0-9]/gi, '').slice(0, 12) : '');
@@ -54,8 +54,9 @@ function list() {
   head('EP Riyadh · AlMaarefa', 'Exit tickets', 'Choose a lesson.');
   app.innerHTML = '<div class="card">' + Object.keys(TICKETS).map(k => `<p><a href="?t=${k}"><b>${esc(TICKETS[k].cls)} · ${esc(TICKETS[k].title)}</b></a><br><span class="why">${esc(TICKETS[k].date)} · <a href="?board&t=${k}">teacher board</a></span></p>`).join('') + '</div>';
 }
+function skin() { if (TK && TK.css) for (const k in TK.css) document.documentElement.style.setProperty(k, TK.css[k]); }
 function student() {
-  document.body.dataset.k = TK.skin || ''; head(TK.cls + ' · ' + TK.date, TK.title, 'Five questions. Work alone. No books.');
+  skin(); head(TK.cls + ' · ' + TK.date, TK.title, 'Five questions. Work alone. No books.');
   let name = store.get('name', ''), i = -1, ans = [], conf = -1, sid = store.get('sid', '');
   if (!sid) { sid = Math.random().toString(36).slice(2, 10); store.set('sid', sid); }
   const send = o => { try { fetch(TOPIC, { method: 'POST', body: JSON.stringify({ v: 1, t: id, s: sid, n: name, ...o }), keepalive: true }).catch(() => {}); } catch (e) {} };
@@ -83,7 +84,7 @@ function student() {
   start();
 }
 function board() {
-  document.body.classList.add('wide'); document.body.dataset.k = TK.skin || '';
+  document.body.classList.add('wide'); skin();
   head('Teacher board · ' + TK.cls + ' · ' + TK.date, TK.title, 'Answers arrive live. Keep this page open during the exit ticket.');
   const CK = 'cut_' + id; let cut = store.get(CK, 0), rows = {}, seen = new Set(), es;
   app.innerHTML = `<div class="tools"><span class="dot" id="dot"><i></i><span>Connecting…</span></span><button id="clr">Clear board</button><button id="key">Show answer key</button><span class="why">Student link: ${esc(location.origin + location.pathname)}?t=${esc(id)}</span></div><div class="card" id="tb"></div><div class="card" id="sm"></div><div class="card" id="ky" hidden></div>`;

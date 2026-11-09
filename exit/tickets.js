@@ -4,7 +4,15 @@ const TICKETS = {
   "cls": "PSE 1",
   "date": "Tue 10 Nov",
   "title": "The VAR Check",
-  "skin": "",
+  "css": {
+   "--dark": "#1A0DBE",
+   "--acc": "#E07575",
+   "--go": "#0E9F6E",
+   "--no": "#E5484D",
+   "--bg": "#F7F7FB",
+   "--soft": "#ECEAFB",
+   "--ink": "#14113A"
+  },
   "qs": [
    {
     "q": "How many people are in each dragon boat?",
@@ -55,6 +63,72 @@ const TICKETS = {
     ],
     "a": 0,
     "w": "take place = happen."
+   }
+  ]
+ },
+ "pse1-d4": {
+  "cls": "PSE 1",
+  "date": "Wed 11 Nov",
+  "title": "Tough Guy",
+  "css": {
+   "--dark": "#1C3F6B",
+   "--acc": "#F58C80",
+   "--go": "#0E9F6E",
+   "--no": "#E5484D",
+   "--bg": "#FAF7F1",
+   "--soft": "#EFE6D6",
+   "--ink": "#1E2430"
+  },
+  "qs": [
+   {
+    "q": "\"It looks challenging!\" The race looks ...",
+    "o": [
+     "easy and boring",
+     "difficult but exciting",
+     "short and safe"
+    ],
+    "a": 1,
+    "w": "challenging = difficult, but it tests you."
+   },
+   {
+    "q": "How long is the Tough Guy course?",
+    "o": [
+     "5 kilometres",
+     "15 kilometres",
+     "50 kilometres"
+    ],
+    "a": 1,
+    "w": "Paragraph 1: the 15-kilometre course."
+   },
+   {
+    "q": "\"Temperatures are freezing, sometimes as low as -6 °C.\" Freezing means ...",
+    "o": [
+     "very cold",
+     "very wet",
+     "very hot"
+    ],
+    "a": 0,
+    "w": "The clue is -6 °C."
+   },
+   {
+    "q": "\"Many people take part in the competition because it is so famous.\" it = ...",
+    "o": [
+     "the people",
+     "the competition",
+     "January"
+    ],
+    "a": 1,
+    "w": "it = one thing: the competition."
+   },
+   {
+    "q": "What do participants do right after the nets?",
+    "o": [
+     "crawl through a tunnel",
+     "jump off a platform into a lake",
+     "run through nettles"
+    ],
+    "a": 1,
+    "w": "Paragraph 3: After the nets, the runners jump off a high platform into a lake."
    }
   ]
  }
