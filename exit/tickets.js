@@ -131,5 +131,71 @@ const TICKETS = {
     "w": "Paragraph 3: After the nets, the runners jump off a high platform into a lake."
    }
   ]
+ },
+ "pse1-d5": {
+  "cls": "PSE 1",
+  "date": "Thu 12 Nov",
+  "title": "Race to the Limit",
+  "css": {
+   "--dark": "#232D45",
+   "--acc": "#FF8A6B",
+   "--go": "#0E9F6E",
+   "--no": "#E5484D",
+   "--bg": "#FFFDF2",
+   "--soft": "#F3EEDD",
+   "--ink": "#17162B"
+  },
+  "qs": [
+   {
+    "q": "Which word has the stress on the second syllable?",
+    "o": [
+     "ancient",
+     "compete",
+     "challenging"
+    ],
+    "a": 1,
+    "w": "com-PETE."
+   },
+   {
+    "q": "\"The race starts at midday, ______ the sand is very hot.\"",
+    "o": [
+     "because",
+     "so",
+     "but"
+    ],
+    "a": 1,
+    "w": "so gives a result."
+   },
+   {
+    "q": "In the Red Sand Challenge, what do runners carry at the camel farm?",
+    "o": [
+     "a bag of food",
+     "a bucket of water",
+     "a small camel"
+    ],
+    "a": 1,
+    "w": "Paragraph 3: they must carry a bucket of water."
+   },
+   {
+    "q": "\"Their families wait for them there. This makes the race very special.\" This = ...",
+    "o": [
+     "the race",
+     "the families waiting at the finish",
+     "the desert"
+    ],
+    "a": 1,
+    "w": "This points to the whole idea before it."
+   },
+   {
+    "q": "\"I want to try it. ______ it is good for my health.\"",
+    "o": [
+     "But",
+     "So",
+     "What's more,"
+    ],
+    "a": 2,
+    "w": "What's more adds another point."
+   }
+  ]
  }
 };
