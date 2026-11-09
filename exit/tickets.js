@@ -1,5 +1,137 @@
 // Exit tickets. One entry per lesson. Built from the lesson data files.
 const TICKETS = {
+ "pse1-d1": {
+  "cls": "PSE 1",
+  "date": "Sun 8 Nov",
+  "title": "Leap of Faith",
+  "css": {
+   "--dark": "#141418",
+   "--acc": "#EC1C99",
+   "--go": "#0E9F6E",
+   "--no": "#E5484D",
+   "--bg": "#F7F7FB",
+   "--soft": "#EFEAF6",
+   "--ink": "#17162B"
+  },
+  "qs": [
+   {
+    "q": "\"Deafening\" means ...",
+    "o": [
+     "very loud",
+     "very high",
+     "very fast"
+    ],
+    "a": 0,
+    "w": "deafening = very, very loud."
+   },
+   {
+    "q": "How high is the Bloukrans Bridge?",
+    "o": [
+     "96 metres",
+     "216 metres",
+     "1,500 metres"
+    ],
+    "a": 1,
+    "w": "The bridge is 216 metres high."
+   },
+   {
+    "q": "How old was Mohr when he broke the world record?",
+    "o": [
+     "88",
+     "93",
+     "96"
+    ],
+    "a": 2,
+    "w": "His third jump, at 96, broke the record."
+   },
+   {
+    "q": "\"Bungee jumping is dangerous. ______ the ropes don't often break.\"",
+    "o": [
+     "And",
+     "However,",
+     "So"
+    ],
+    "a": 1,
+    "w": "However, starts a new sentence with a different idea."
+   },
+   {
+    "q": "Before you watch a video, what helps you predict the content?",
+    "o": [
+     "the photos and the title",
+     "the answers",
+     "the transcript"
+    ],
+    "a": 0,
+    "w": "Predicting content using visuals."
+   }
+  ]
+ },
+ "pse1-d2": {
+  "cls": "PSE 1",
+  "date": "Mon 9 Nov",
+  "title": "Five Unusual Sports",
+  "css": {
+   "--dark": "#1B1035",
+   "--acc": "#FF7A00",
+   "--go": "#0E9F6E",
+   "--no": "#E5484D",
+   "--bg": "#F7F7FB",
+   "--soft": "#EEEAF7",
+   "--ink": "#17162B"
+  },
+  "qs": [
+   {
+    "q": "\"The race will ______ in the stadium.\"",
+    "o": [
+     "take place",
+     "compete",
+     "throw"
+    ],
+    "a": 0,
+    "w": "take place = happen."
+   },
+   {
+    "q": "Before you read, you scan for key words. Key words are usually ...",
+    "o": [
+     "articles and prepositions",
+     "nouns, verbs and adjectives",
+     "numbers only"
+    ],
+    "a": 1,
+    "w": "The skills box on page 107."
+   },
+   {
+    "q": "Which paragraph is about the caber toss?",
+    "o": [
+     "paragraph 2",
+     "paragraph 4",
+     "paragraph 6"
+    ],
+    "a": 1,
+    "w": "Paragraph 4: caber toss."
+   },
+   {
+    "q": "Where is toe wrestling popular?",
+    "o": [
+     "Scotland",
+     "England",
+     "the USA"
+    ],
+    "a": 1,
+    "w": "Exercise 5: England."
+   },
+   {
+    "q": "Choose the correct sentence.",
+    "o": [
+     "They are many sports in Asia.",
+     "There are many sports in Asia.",
+     "There is many sports in Asia."
+    ],
+    "a": 1,
+    "w": "There are + plural noun."
+   }
+  ]
+ },
  "pse1-d3": {
   "cls": "PSE 1",
   "date": "Tue 10 Nov",
