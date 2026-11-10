@@ -329,5 +329,203 @@ const TICKETS = {
     "w": "What's more adds another point."
    }
   ]
+ },
+ "pse1-d6": {
+  "cls": "PSE 1",
+  "date": "Sun 15 Nov",
+  "title": "On the Move",
+  "css": {
+   "--dark": "#1F3B36",
+   "--acc": "#6B78FF",
+   "--go": "#0E9F6E",
+   "--no": "#E5484D",
+   "--bg": "#F6FBF9",
+   "--soft": "#E3F1EB",
+   "--ink": "#16302B"
+  },
+  "qs": [
+   {
+    "q": "Go ______ the tunnel: in one side and out of the other.",
+    "o": [
+     "past",
+     "through",
+     "over"
+    ],
+    "a": 1,
+    "w": "through = in one side, out of the other."
+   },
+   {
+    "q": "Swim ______ the lake, from one side to the other.",
+    "o": [
+     "across",
+     "along",
+     "under"
+    ],
+    "a": 0,
+    "w": "across = from one side to the other (flat)."
+   },
+   {
+    "q": "How far do the participants cycle in the Sydney Triathlon?",
+    "o": [
+     "10 km",
+     "1,500 m",
+     "40 km"
+    ],
+    "a": 2,
+    "w": "The key: 40 km, 3 laps."
+   },
+   {
+    "q": "The athletes ______ 10 kilometres.",
+    "o": [
+     "run",
+     "runs",
+     "running"
+    ],
+    "a": 0,
+    "w": "Plural subject (the athletes) + base verb."
+   },
+   {
+    "q": "The race ______ at the Opera House.",
+    "o": [
+     "start",
+     "starts",
+     "are start"
+    ],
+    "a": 1,
+    "w": "Singular subject (the race) + verb-s."
+   }
+  ]
+ },
+ "pse1-d7": {
+  "cls": "PSE 1",
+  "date": "Mon 16 Nov",
+  "title": "First, Next, Finally",
+  "css": {
+   "--dark": "#111111",
+   "--acc": "#DC5A5A",
+   "--go": "#0E9F6E",
+   "--no": "#E5484D",
+   "--bg": "#FFFFFF",
+   "--soft": "#F3EEF0",
+   "--ink": "#111111"
+  },
+  "qs": [
+   {
+    "q": "Which sentence is correct?",
+    "o": [
+     "First the athletes swim.",
+     "First, the athletes swim.",
+     "First, the athletes swims."
+    ],
+    "a": 1,
+    "w": "A comma after First, and the athletes + swim."
+   },
+   {
+    "q": "In a process paragraph, you write the events ...",
+    "o": [
+     "in the order they happen",
+     "from the most to the least important",
+     "in any order"
+    ],
+    "a": 0,
+    "w": "The skills box on p. 118."
+   },
+   {
+    "q": "A paragraph about the high jump. Which sentence is unrelated?",
+    "o": [
+     "First, the high jumper runs towards the bar.",
+     "I was on the track-and-field team at school.",
+     "Finally, the high jumper stands up."
+    ],
+    "a": 1,
+    "w": "A story about the writer does not describe the process."
+   },
+   {
+    "q": "In the planner, column A is for ...",
+    "o": [
+     "the events in order",
+     "general information",
+     "my opinion"
+    ],
+    "a": 1,
+    "w": "Column A: general information. Column B: the events."
+   },
+   {
+    "q": "The weightlifter ______ the weight to the ground.",
+    "o": [
+     "drop",
+     "drops",
+     "dropping"
+    ],
+    "a": 1,
+    "w": "One subject + verb-s."
+   }
+  ]
+ },
+ "pse1-d8": {
+  "cls": "PSE 1",
+  "date": "Tue 17 Nov",
+  "title": "Write It, Check It",
+  "css": {
+   "--dark": "#2A1A6E",
+   "--acc": "#FF8A6B",
+   "--go": "#0E9F6E",
+   "--no": "#E5484D",
+   "--bg": "#F7F7FB",
+   "--soft": "#EEE8FA",
+   "--ink": "#17162B"
+  },
+  "qs": [
+   {
+    "q": "Which is the best topic sentence?",
+    "o": [
+     "First, the athletes swim.",
+     "The Sydney Triathlon is a race with three events: swimming, cycling and running.",
+     "I love Sydney."
+    ],
+    "a": 1,
+    "w": "A topic sentence gives general information."
+   },
+   {
+    "q": "Correct the verb: \"The athletes swims across the bay.\"",
+    "o": [
+     "swim",
+     "swimming",
+     "is swim"
+    ],
+    "a": 0,
+    "w": "The athletes (more than one) + swim."
+   },
+   {
+    "q": "Finally, they run ______ the road to the finish.",
+    "o": [
+     "across",
+     "along",
+     "under"
+    ],
+    "a": 1,
+    "w": "along = follow a long line."
+   },
+   {
+    "q": "Which question is on the task checklist?",
+    "o": [
+     "Did you avoid unrelated information?",
+     "Did you use difficult words?",
+     "Did you write 300 words?"
+    ],
+    "a": 0,
+    "w": "Page 122, Task checklist."
+   },
+   {
+    "q": "Which sentence is correct?",
+    "o": [
+     "After that they cycle past the library.",
+     "After that, they cycle past the library.",
+     "After that, they cycles past the library."
+    ],
+    "a": 1,
+    "w": "Comma after the transition word; they + cycle."
+   }
+  ]
  }
 };
