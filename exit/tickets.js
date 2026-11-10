@@ -527,5 +527,71 @@ const TICKETS = {
     "w": "Comma after the transition word; they + cycle."
    }
   ]
+ },
+ "pse1-d9": {
+  "cls": "PSE 1",
+  "date": "Wed 18 Nov",
+  "title": "Hall of Fame",
+  "css": {
+   "--dark": "#1B1035",
+   "--acc": "#FFC21A",
+   "--go": "#0E9F6E",
+   "--no": "#E5484D",
+   "--bg": "#F7F7FB",
+   "--soft": "#EEEAF7",
+   "--ink": "#17162B"
+  },
+  "qs": [
+   {
+    "q": "\"Participant\" means ...",
+    "o": [
+     "a person who takes part in a race",
+     "a place for a race",
+     "a prize for the winner"
+    ],
+    "a": 0,
+    "w": "participant = a person who takes part."
+   },
+   {
+    "q": "Which word has the stress on the third syllable?",
+    "o": [
+     "competitor",
+     "competition",
+     "compete"
+    ],
+    "a": 1,
+    "w": "com-pe-TI-tion: the stress is just before -tion."
+   },
+   {
+    "q": "The camels run ______ the track two times.",
+    "o": [
+     "along",
+     "around",
+     "under"
+    ],
+    "a": 1,
+    "w": "around = in a circle."
+   },
+   {
+    "q": "There ______ a big prize for the winner.",
+    "o": [
+     "is",
+     "are",
+     "be"
+    ],
+    "a": 0,
+    "w": "a prize (one) → There is."
+   },
+   {
+    "q": "A True or False question: what do you do first?",
+    "o": [
+     "Find the sentence in the text and underline it.",
+     "Answer quickly.",
+     "Guess."
+    ],
+    "a": 0,
+    "w": "Find the evidence first."
+   }
+  ]
  }
 };
