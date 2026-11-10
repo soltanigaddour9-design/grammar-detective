@@ -659,5 +659,71 @@ const TICKETS = {
     "w": "com-pe-TI-tion."
    }
   ]
+ },
+ "pse2-d3": {
+  "cls": "PSE 2",
+  "date": "Tue 10 Nov",
+  "title": "Whose Responsibility?",
+  "css": {
+   "--dark": "#4A1259",
+   "--acc": "#E0349B",
+   "--go": "#1E9E6A",
+   "--no": "#D6455D",
+   "--bg": "#FFF3FA",
+   "--soft": "#FBE4F3",
+   "--ink": "#3B1245"
+  },
+  "qs": [
+   {
+    "q": "Making an inference means ...",
+    "o": [
+     "using clues in the text to work out something that is not stated",
+     "copying a sentence from the text",
+     "translating a difficult word"
+    ],
+    "a": 0,
+    "w": "Clues in the text + what you know = inference."
+   },
+   {
+    "q": "A balanced diet is ...",
+    "o": [
+     "eating only fruit and vegetables",
+     "a healthy mixture of different types of food",
+     "eating very small portions"
+    ],
+    "a": 1,
+    "w": "Balanced = the right amounts of different foods."
+   },
+   {
+    "q": "In Reading 2, why do some people want governments to take the lead?",
+    "o": [
+     "Governments sell junk food.",
+     "Individuals do not want to exercise.",
+     "Individual efforts to control obesity often fail."
+    ],
+    "a": 2,
+    "w": "Paragraph 3: individual efforts often end in failure."
+   },
+   {
+    "q": "\"A typical healthy diet might include 50% fruit and vegetables.\" In the essay, this detail is ...",
+    "o": [
+     "an opinion",
+     "an example",
+     "a prediction"
+    ],
+    "a": 1,
+    "w": "The essay says \"for example, a typical healthy diet might include ...\"."
+   },
+   {
+    "q": "What is the writer's own opinion in the conclusion?",
+    "o": [
+     "Both individuals and governments must take action.",
+     "Only governments are responsible.",
+     "Only individuals are responsible."
+    ],
+    "a": 0,
+    "w": "\"Both parties have a role to play.\""
+   }
+  ]
  }
 };
