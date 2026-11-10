@@ -593,5 +593,71 @@ const TICKETS = {
     "w": "Find the evidence first."
    }
   ]
+ },
+ "pse1-d10": {
+  "cls": "PSE 1",
+  "date": "Thu 19 Nov",
+  "title": "Game Day",
+  "css": {
+   "--dark": "#3A3436",
+   "--acc": "#F58C80",
+   "--go": "#0E9F6E",
+   "--no": "#E5484D",
+   "--bg": "#FAF7F1",
+   "--soft": "#EFE6D6",
+   "--ink": "#1E2430"
+  },
+  "qs": [
+   {
+    "q": "Before you write a process paragraph, you should ...",
+    "o": [
+     "plan the events in order",
+     "start writing immediately",
+     "write the concluding sentence first"
+    ],
+    "a": 0,
+    "w": "Plan first: the events in order."
+   },
+   {
+    "q": "Which is a clear target?",
+    "o": [
+     "I will underline the evidence before I answer True or False.",
+     "I will be better.",
+     "I will study."
+    ],
+    "a": 0,
+    "w": "A clear target says exactly what you will do."
+   },
+   {
+    "q": "The fastest camel ______ the race.",
+    "o": [
+     "win",
+     "wins",
+     "winning"
+    ],
+    "a": 1,
+    "w": "One camel (it) + wins."
+   },
+   {
+    "q": "They swim ______ the lake, from one side to the other.",
+    "o": [
+     "across",
+     "along",
+     "around"
+    ],
+    "a": 0,
+    "w": "across = from one side to the other."
+   },
+   {
+    "q": "In \"competition\", the stress is on ...",
+    "o": [
+     "com",
+     "pe",
+     "ti"
+    ],
+    "a": 2,
+    "w": "com-pe-TI-tion."
+   }
+  ]
  }
 };
