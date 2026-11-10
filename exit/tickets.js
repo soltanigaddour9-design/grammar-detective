@@ -1120,5 +1120,71 @@ const TICKETS = {
     "w": "Evidence first."
    }
   ]
+ },
+ "pse2-d10": {
+  "cls": "PSE 2",
+  "date": "Thu 19 Nov",
+  "title": "Your Day",
+  "css": {
+   "--dark": "#266864",
+   "--acc": "#8E6BC0",
+   "--go": "#1E9E6A",
+   "--no": "#D6455D",
+   "--bg": "#F1F9F6",
+   "--soft": "#E0F0EA",
+   "--ink": "#173734"
+  },
+  "qs": [
+   {
+    "q": "Which is a clear target?",
+    "o": [
+     "I will check every verb for agreement before I hand in my writing.",
+     "I will be better at writing.",
+     "I will study hard."
+    ],
+    "a": 0,
+    "w": "A clear target is an action you can check."
+   },
+   {
+    "q": "In a balanced opinion essay, your own opinion goes in ...",
+    "o": [
+     "the introductory paragraph",
+     "body paragraph 1",
+     "the concluding paragraph"
+    ],
+    "a": 2,
+    "w": "Summary of both sides, then your opinion."
+   },
+   {
+    "q": "Governments should ban junk food adverts ______ protect children.",
+    "o": [
+     "so that",
+     "in order to",
+     "although"
+    ],
+    "a": 1,
+    "w": "in order to + verb."
+   },
+   {
+    "q": "The noun form of \"encourage\" is ...",
+    "o": [
+     "encouragement",
+     "encouraging",
+     "encouraged"
+    ],
+    "a": 0,
+    "w": "encourage → encouragement."
+   },
+   {
+    "q": "After a test, strong students ...",
+    "o": [
+     "forget about it",
+     "look at their mistakes and set targets",
+     "look only at the score"
+    ],
+    "a": 1,
+    "w": "Mistakes show you what to study next."
+   }
+  ]
  }
 };
