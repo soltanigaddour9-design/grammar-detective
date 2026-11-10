@@ -1186,5 +1186,137 @@ const TICKETS = {
     "w": "Mistakes show you what to study next."
    }
   ]
+ },
+ "pse2-d1": {
+  "cls": "PSE 2",
+  "date": "Sun 8 Nov",
+  "title": "Coffee Break",
+  "css": {
+   "--dark": "#6B4032",
+   "--acc": "#E0668C",
+   "--go": "#1E9E6A",
+   "--no": "#D6455D",
+   "--bg": "#FBF4EF",
+   "--soft": "#F6E3E0",
+   "--ink": "#3B241C"
+  },
+  "qs": [
+   {
+    "q": "A health conscious person ...",
+    "o": [
+     "never thinks about food",
+     "is interested in her health and careful about it",
+     "is always ill"
+    ],
+    "a": 1,
+    "w": "health conscious = interested in your health."
+   },
+   {
+    "q": "\"The risk of heart disease\" means that heart disease is ...",
+    "o": [
+     "certain",
+     "possible",
+     "impossible"
+    ],
+    "a": 1,
+    "w": "risk = the possibility of something bad."
+   },
+   {
+    "q": "In the video, recent research shows that coffee ...",
+    "o": [
+     "is bad for our health",
+     "may protect us from diseases",
+     "has no effect on us"
+    ],
+    "a": 1,
+    "w": "It contains antioxidants, which may protect us."
+   },
+   {
+    "q": "Medical experts say you should limit coffee to ...",
+    "o": [
+     "two cups a day",
+     "five cups a day",
+     "seven cups a day"
+    ],
+    "a": 1,
+    "w": "Not more than five cups a day."
+   },
+   {
+    "q": "Before you watch a video, the photos help you to ...",
+    "o": [
+     "predict the content",
+     "check your spelling",
+     "write the summary"
+    ],
+    "a": 0,
+    "w": "Photos help you predict."
+   }
+  ]
+ },
+ "pse2-d2": {
+  "cls": "PSE 2",
+  "date": "Mon 9 Nov",
+  "title": "Move and Glow",
+  "css": {
+   "--dark": "#B8336A",
+   "--acc": "#E58A1F",
+   "--go": "#1E9E6A",
+   "--no": "#D6455D",
+   "--bg": "#FFF6EF",
+   "--soft": "#FFE3D6",
+   "--ink": "#4A1730"
+  },
+  "qs": [
+   {
+    "q": "Which is a serious illness?",
+    "o": [
+     "a cold",
+     "heart disease",
+     "a headache after studying"
+    ],
+    "a": 1,
+    "w": "serious = bad or dangerous."
+   },
+   {
+    "q": "People who ______ from stress often sleep badly.",
+    "o": [
+     "suffer",
+     "recognize",
+     "burn"
+    ],
+    "a": 0,
+    "w": "suffer from + problem."
+   },
+   {
+    "q": "When you skim a text, you ...",
+    "o": [
+     "read every word slowly",
+     "read quickly for the general idea",
+     "look for one number"
+    ],
+    "a": 1,
+    "w": "Skim = read fast for the main idea."
+   },
+   {
+    "q": "In the article, how can busy people exercise?",
+    "o": [
+     "in ten-minute chunks",
+     "only at weekends",
+     "for two hours every day"
+    ],
+    "a": 0,
+    "w": "Paragraph 5: ten minutes, three times a day."
+   },
+   {
+    "q": "An inference is ...",
+    "o": [
+     "a sentence copied from the text",
+     "something that is probably true, from clues and your knowledge",
+     "a guess with no reason"
+    ],
+    "a": 1,
+    "w": "Clues + knowledge = inference."
+   }
+  ]
  }
 };
