@@ -1,4 +1,3 @@
-// Exit tickets. One entry per lesson. Built from the lesson data files.
 const TICKETS = {
  "pse1-d1": {
   "cls": "PSE 1",
@@ -987,6 +986,138 @@ const TICKETS = {
     ],
     "a": 0,
     "w": "Body 1 = one position; body 2 = the other position."
+   }
+  ]
+ },
+ "pse2-d8": {
+  "cls": "PSE 2",
+  "date": "Tue 17 Nov",
+  "title": "Write It",
+  "css": {
+   "--dark": "#7A1F4B",
+   "--acc": "#D6456F",
+   "--go": "#1E9E6A",
+   "--no": "#D6455D",
+   "--bg": "#FDF1F5",
+   "--soft": "#FBE1EA",
+   "--ink": "#3A1226"
+  },
+  "qs": [
+   {
+    "q": "What do you check with the TASK checklist?",
+    "o": [
+     "content and structure",
+     "spelling",
+     "handwriting"
+    ],
+    "a": 0,
+    "w": "Task checklist = content and structure. Language checklist = language."
+   },
+   {
+    "q": "In peer review, you should ...",
+    "o": [
+     "rewrite your partner's essay",
+     "underline the topic sentences and suggest one thing to improve",
+     "only say \"good\""
+    ],
+    "a": 1,
+    "w": "Find the structure, then give two stars and a wish."
+   },
+   {
+    "q": "Which linker adds a second argument?",
+    "o": [
+     "However",
+     "In addition",
+     "In conclusion"
+    ],
+    "a": 1,
+    "w": "In addition = one more idea on the same side."
+   },
+   {
+    "q": "Choose the correct sentence.",
+    "o": [
+     "Many students argues that PE is useful.",
+     "Many students argue that PE is useful.",
+     "Many students arguing that PE is useful."
+    ],
+    "a": 1,
+    "w": "students (plural) + argue."
+   },
+   {
+    "q": "When you edit, the code WF means ...",
+    "o": [
+     "wrong form of the word",
+     "write faster",
+     "a new paragraph"
+    ],
+    "a": 0,
+    "w": "WF = word form: reduce / reduction."
+   }
+  ]
+ },
+ "pse2-d9": {
+  "cls": "PSE 2",
+  "date": "Wed 18 Nov",
+  "title": "All Together",
+  "css": {
+   "--dark": "#4A2A8F",
+   "--acc": "#1E9E88",
+   "--go": "#1E9E6A",
+   "--no": "#D6455D",
+   "--bg": "#F6F1FE",
+   "--soft": "#E6DBFA",
+   "--ink": "#2A1B50"
+  },
+  "qs": [
+   {
+    "q": "\"Moderate exercise\" is ...",
+    "o": [
+     "very hard exercise",
+     "exercise that is not too hard and not too easy",
+     "no exercise"
+    ],
+    "a": 1,
+    "w": "moderate = not too much and not too little."
+   },
+   {
+    "q": "The noun form of \"participate\" is ...",
+    "o": [
+     "participation",
+     "participated",
+     "participating"
+    ],
+    "a": 0,
+    "w": "participate → participation."
+   },
+   {
+    "q": "Which sentence is correct?",
+    "o": [
+     "Although sleep is important, but students forget it.",
+     "Although sleep is important, many students forget it.",
+     "Although sleep is important. Many students forget it."
+    ],
+    "a": 1,
+    "w": "Although + idea 1, idea 2. No \"but\"."
+   },
+   {
+    "q": "A thesis statement in a balanced opinion essay ...",
+    "o": [
+     "gives only your opinion",
+     "shows the two positions the essay will discuss",
+     "gives an example"
+    ],
+    "a": 1,
+    "w": "It names both positions."
+   },
+   {
+    "q": "Before you answer an agree / disagree question in a reading test, you should ...",
+    "o": [
+     "guess quickly",
+     "find the evidence in the text",
+     "read only the last paragraph"
+    ],
+    "a": 1,
+    "w": "Evidence first."
    }
   ]
  }
