@@ -857,5 +857,137 @@ const TICKETS = {
     "w": "It is a reason not to require the classes."
    }
   ]
+ },
+ "pse2-d6": {
+  "cls": "PSE 2",
+  "date": "Sun 15 Nov",
+  "title": "State It",
+  "css": {
+   "--dark": "#4E1266",
+   "--acc": "#E6007E",
+   "--go": "#1E9E6A",
+   "--no": "#D6455D",
+   "--bg": "#FBEFF8",
+   "--soft": "#F7E1F3",
+   "--ink": "#33103F"
+  },
+  "qs": [
+   {
+    "q": "Which sentence is correct?",
+    "o": [
+     "Governments should to tax sugar.",
+     "Governments should tax sugar.",
+     "Governments should taxing sugar."
+    ],
+    "a": 1,
+    "w": "should + base verb (no \"to\")."
+   },
+   {
+    "q": "Many people ______ that junk food adverts should be illegal.",
+    "o": [
+     "argue",
+     "opinion",
+     "view"
+    ],
+    "a": 0,
+    "w": "Many people + reporting verb + that ..."
+   },
+   {
+    "q": "Universities should build gyms ______ students can exercise.",
+    "o": [
+     "in order to",
+     "so that",
+     "to"
+    ],
+    "a": 1,
+    "w": "so that + subject + can + verb."
+   },
+   {
+    "q": "Which sentence has the correct punctuation?",
+    "o": [
+     "Exercise is free, however gyms are expensive.",
+     "Exercise is free. However, gyms are expensive.",
+     "Exercise is free however, gyms are expensive."
+    ],
+    "a": 1,
+    "w": "Full stop. However, + comma."
+   },
+   {
+    "q": "______ junk food is cheap, it is unhealthy.",
+    "o": [
+     "But",
+     "However",
+     "Although"
+    ],
+    "a": 2,
+    "w": "Although + idea 1, idea 2."
+   }
+  ]
+ },
+ "pse2-d7": {
+  "cls": "PSE 2",
+  "date": "Mon 16 Nov",
+  "title": "Build It",
+  "css": {
+   "--dark": "#14564E",
+   "--acc": "#E8577A",
+   "--go": "#1E9E6A",
+   "--no": "#D6455D",
+   "--bg": "#EEF8F3",
+   "--soft": "#FDE7EC",
+   "--ink": "#17332F"
+  },
+  "qs": [
+   {
+    "q": "Where is the thesis statement?",
+    "o": [
+     "in the introductory paragraph",
+     "in body paragraph 1",
+     "in the concluding paragraph"
+    ],
+    "a": 0,
+    "w": "The thesis statement ends the introductory paragraph."
+   },
+   {
+    "q": "A topic sentence ...",
+    "o": [
+     "gives a small detail",
+     "tells the reader the main idea of the paragraph",
+     "ends the essay"
+    ],
+    "a": 1,
+    "w": "Topic sentence = the main idea of the paragraph."
+   },
+   {
+    "q": "Which is the best thesis statement for a balanced opinion essay?",
+    "o": [
+     "I think exercise is good.",
+     "Although exercise at work has benefits for employees, it also has costs for companies.",
+     "This essay is about exercise."
+    ],
+    "a": 1,
+    "w": "It shows the two positions."
+   },
+   {
+    "q": "Which is NOT in a concluding paragraph?",
+    "o": [
+     "a summary of both arguments",
+     "the writer's opinion",
+     "a new argument with details"
+    ],
+    "a": 2,
+    "w": "No new arguments in the conclusion."
+   },
+   {
+    "q": "In a balanced opinion essay, body paragraph 2 usually ...",
+    "o": [
+     "gives the other side of the argument",
+     "repeats the introduction",
+     "gives only the writer's opinion"
+    ],
+    "a": 0,
+    "w": "Body 1 = one position; body 2 = the other position."
+   }
+  ]
  }
 };
