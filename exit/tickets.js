@@ -725,5 +725,137 @@ const TICKETS = {
     "w": "\"Both parties have a role to play.\""
    }
   ]
+ },
+ "pse2-d4": {
+  "cls": "PSE 2",
+  "date": "Wed 11 Nov",
+  "title": "Word Power",
+  "css": {
+   "--dark": "#2B3580",
+   "--acc": "#E0606E",
+   "--go": "#1E9E6A",
+   "--no": "#D6455D",
+   "--bg": "#F4F0FB",
+   "--soft": "#ECE5F8",
+   "--ink": "#20264F"
+  },
+  "qs": [
+   {
+    "q": "The noun form of \"reduce\" is ...",
+    "o": [
+     "reducement",
+     "reduction",
+     "reducion"
+    ],
+    "a": 1,
+    "w": "reduce → reduction (verb + -tion)."
+   },
+   {
+    "q": "Which word has the same noun and verb form?",
+    "o": [
+     "ban",
+     "promote",
+     "sell"
+    ],
+    "a": 0,
+    "w": "to ban / a ban. (sell → sale, promote → promotion)"
+   },
+   {
+    "q": "Which collocation is correct?",
+    "o": [
+     "heart illness",
+     "heart sickness",
+     "heart disease"
+    ],
+    "a": 2,
+    "w": "We say heart disease."
+   },
+   {
+    "q": "\"How long a person can expect to live\" is ...",
+    "o": [
+     "a healthy lifestyle",
+     "life expectancy",
+     "regular exercise"
+    ],
+    "a": 1,
+    "w": "life expectancy = the number of years a person can expect to live."
+   },
+   {
+    "q": "A strong argument needs ...",
+    "o": [
+     "supporting details: facts, examples or reasons",
+     "very long sentences",
+     "difficult words"
+    ],
+    "a": 0,
+    "w": "Argument + supporting detail."
+   }
+  ]
+ },
+ "pse2-d5": {
+  "cls": "PSE 2",
+  "date": "Thu 12 Nov",
+  "title": "Two Sides",
+  "css": {
+   "--dark": "#0F5E6E",
+   "--acc": "#ED4FA6",
+   "--go": "#1E9E6A",
+   "--no": "#D6455D",
+   "--bg": "#FFF3F9",
+   "--soft": "#FBE3F1",
+   "--ink": "#123040"
+  },
+  "qs": [
+   {
+    "q": "A balanced opinion essay ...",
+    "o": [
+     "gives only the writer's opinion",
+     "gives both sides and the writer's opinion",
+     "gives only facts and numbers"
+    ],
+    "a": 1,
+    "w": "Both sides, then your opinion."
+   },
+   {
+    "q": "Which detail supports \"Exercise decreases stress\" best?",
+    "o": [
+     "Many students feel calmer after a walk before an exam.",
+     "I like sport.",
+     "Exercise is good."
+    ],
+    "a": 0,
+    "w": "A clear example linked to the argument."
+   },
+   {
+    "q": "In the essay question, \"required\" means ...",
+    "o": [
+     "companies can choose",
+     "companies should not do it",
+     "companies must do it"
+    ],
+    "a": 2,
+    "w": "required = it is a rule."
+   },
+   {
+    "q": "What should you do before you write an essay?",
+    "o": [
+     "count the words",
+     "plan your arguments and details",
+     "write the conclusion"
+    ],
+    "a": 1,
+    "w": "Plan first: arguments and supporting details."
+   },
+   {
+    "q": "Which is an argument AGAINST physical education classes at university?",
+    "o": [
+     "Students are busy and need time to study.",
+     "Exercise decreases stress.",
+     "Team sports build friendships."
+    ],
+    "a": 0,
+    "w": "It is a reason not to require the classes."
+   }
+  ]
  }
 };
