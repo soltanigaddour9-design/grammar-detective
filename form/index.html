@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questionnaire · PSE 2B</title>
+<style>body{margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;background:#FFFAFD;color:#123040;display:flex;min-height:100vh;align-items:center;justify-content:center}
+.c{max-width:520px;margin:24px;padding:28px;border-radius:22px;background:#fff;box-shadow:0 8px 30px rgba(15,94,110,.12);border-top:8px solid #ED4FA6;text-align:center}
+h1{color:#0F5E6E;font-size:24px;margin:.2em 0}p{font-size:17px;line-height:1.5}a.b{display:inline-block;margin-top:10px;padding:14px 26px;border-radius:30px;background:#ED4FA6;color:#fff;font-weight:700;text-decoration:none}</style></head>
+<body><div class="c" id="c"><h1>Your writing: a short questionnaire</h1><p>Opening the questionnaire...</p></div>
+<script>
+// Paste each class's Google Form link here. Students scan one QR code; the teacher can change the link at any time.
+const FORMS = { pse2b: '' };
+const k = new URLSearchParams(location.search).get('f') || 'pse2b', url = FORMS[k];
+if (url) { location.replace(url); document.getElementById('c').innerHTML += '<a class="b" href="' + url + '">Open the questionnaire</a>'; }
+else document.getElementById('c').innerHTML = '<h1>Your writing: a short questionnaire</h1><p>The questionnaire is not open yet. Please wait for your teacher.</p>';
+</script></body></html>
