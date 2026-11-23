@@ -1,0 +1,16 @@
+{
+  "name": "Bloom & Buzz · PSE 2B Revision Garden",
+  "short_name": "Bloom & Buzz",
+  "description": "Revision garden for PSE 2B: Unlock 3, Units 1 to 5, mid-term practice.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFF8F3",
+  "theme_color": "#E0457B",
+  "icons": [
+    { "src": "img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
