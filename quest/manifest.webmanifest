@@ -1,0 +1,16 @@
+{
+  "name": "Quest Unlocked · The Isle of Five Keys",
+  "short_name": "Quest Unlocked",
+  "description": "An English adventure island for PSE 1: Unlock 2, Units 1 to 5, Reading & Writing and Listening & Speaking.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F3F7FC",
+  "theme_color": "#0B2A7A",
+  "icons": [
+    { "src": "img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
