@@ -14,9 +14,10 @@ const Z = {
   vocab: { name: 'Vocabulary', place: 'Fruit Orchard', book: 'Both books', c: '#F2694B', d: '#B03A1F', s: '#FFEDE7', line: 'Pick the words like fruit: flashcards, games and exam-style gaps.' },
   honey: { name: 'Honey Lab', place: 'Honeycomb Tower', book: 'Games', c: '#E89B0C', d: '#9A5E00', s: '#FFF4D9', line: 'Make juice, mix perfume, solve garden mysteries and fill your honey jar.' },
   exam: { name: 'Mock Exam', place: 'Firefly Night Meadow', book: 'Mid-term', c: '#3B3A8F', d: '#1E1B4B', s: '#ECEBFA', line: 'Under the fireflies: full practice papers in the real mid-term format.' },
+  lab: { name: 'Invention Lab', place: 'Unit 6 · Discovery and Invention', book: 'R&W book', c: '#FF2E9A', d: '#7B2CBF', s: '#F6E8FF', line: 'Weeks 11 and 12: one lab for every lesson, the girls\' group chats, flashcards and a unit test.' },
   me: { name: 'My Garden', place: 'My Flower Bed', book: 'Progress', c: '#3FA45E', d: '#24713D', s: '#E8F6EC', line: 'Watch your flowers grow as your scores grow.' }
 };
-const ORDERZ = ['listening', 'speaking', 'reading', 'writing', 'grammar', 'vocab', 'honey', 'exam', 'me'];
+const ORDERZ = ['lab', 'listening', 'speaking', 'reading', 'writing', 'grammar', 'vocab', 'honey', 'exam', 'me'];
 const DOCK = [['home', 'Home'], ['listening', 'Listen'], ['speaking', 'Speak'], ['reading', 'Read'], ['writing', 'Write'], ['vocab', 'Words'], ['grammar', 'Grammar']];
 const icon = (z, cls = '') => `<span class="zi ${cls}">${A.ICON[z === 'home' ? 'home' : z]((Z[z] || { c: '#E0457B' }).c)}</span>`;
 const unitsOf = x => x.u || ((String(x.unit || '') + ' ' + String(x.src || '')).match(/(?:U|Unit|Units?)\s*([1-5](?:\s*(?:,|and|to|\+|·)\s*[1-5])*)/gi) || []).join(' ').match(/[1-5]/g)?.map(Number) || [];
@@ -93,6 +94,7 @@ function home() {
   view.innerHTML = `<section class="hero">${A.SCENE.home()}<div class="hero-bees" aria-hidden="true">${A.bee(28, 'b1')}${A.bee(22, 'b2')}${A.butterfly('#FF9EC4', '#C77DFF', 30, 'f1')}${A.butterfly('#7FC4F5', '#C9A7FF', 26, 'f2')}</div>
     <div class="hero-t"><span class="kick">PSE 2B · Unlock 3 · Units 1 to 5</span><h1>Bloom <i>&amp;</i> Buzz</h1><p>Your revision garden for the mid-term. Fly from flower to flower, collect honey, and bloom on exam day.</p></div></section>
     ${S.name ? `<div class="hello">Welcome back, <b>${esc(S.name)}</b> 🌸 You have <b>${S.honey()}</b> drops of honey.</div>` : `<form class="card namecard" id="nm"><b>🌷 What's your name?</b><p class="hint">It appears on your scores when you send them to your teacher.</p><div class="row"><input id="nmi" maxlength="24" placeholder="Your first name" autocomplete="given-name"><button class="btn">Enter the garden</button></div></form>`}
+    <a class="labcard" data-nav href="#/z/lab"><span class="lc-ic">${icon('lab')}</span><span class="lc-t"><em>NEW · Weeks 11 and 12</em><b>Invention Lab · Unit 6</b><small>Discovery and Invention: a lab for every lesson, flashcards, group chats and a unit test.</small></span><span class="lc-go">›</span></a>
     <h2 class="sec-t">🗺️ Your mid-term: two papers</h2>
     <div class="papers">${[['ls', '🎧🎤', 'listening', 'speaking'], ['rw', '📖✍️', 'reading', 'writing']].map(([k, e, z1, z2]) => `<div class="paperc ${k}"><div class="ph"><span>${e}</span><div><b>${info[k].name}</b><small>${k === 'ls' ? 'Listening, Speaking & Critical Thinking book' : 'Reading, Writing & Critical Thinking book'}</small></div></div>
       <ol>${info[k].parts.map(([a, b]) => `<li><b>${a}</b><span>${b}</span></li>`).join('')}</ol>
@@ -124,6 +126,15 @@ const chatTile = (z, grp) => tile(z, `#/a/${z}/chat/${grp}`, '💬', 'WhatsApp: 
 function zone(z) {
   if (!Z[z]) return home();
   let body = '';
+  if (z === 'lab') {
+    const U = window.U6;
+    body = `<div class="labintro"><b>🧪 How the lab works</b><p>Every lesson has its own station. Do the activities after class, then join the girls' group chat (the exit ticket).</p></div>`
+      + group('Flashcards', 'All the Unit 6 words with pictures, meanings and examples.', tile(z, '#/a/lab/cards/u6', '🃏', 'Unit 6 flashcards', `${(window.VOCAB.units.find(u => u.id === 'u6') || { words: [] }).words.length} words · flip and check`, 'vocab:cards:u6'), '🚀')
+      + U.DAYS.map(d => group(`Day ${d.n} · ${d.title}`, `${d.date} · ${d.pages}`, d.sets.map(st => tile(z, `#/a/lab/set/${st.id}`, st.emoji, st.title, st.sub, `lab:set:${st.id}`)).join('')
+          + `<a class="tile-z chatz" href="${U.CHAT(d.n)}"><span class="te">💬</span><span class="tt"><b>Group chat · exit ticket</b><small>8 questions in the girls' chat</small></span></a>`, d.emoji)).join('')
+      + group('Day 9 · Mission Review', 'Wed 9 Dec · the whole unit', tile(z, '#/a/lab/read/robots', '🤖', 'New text: Robot nurses', 'Test-style reading questions', 'lab:read:robots') + tile(z, '#/a/lab/test/u6', '🏆', 'Unit 6 test', '18 mixed questions', 'lab:test:u6')
+          + `<a class="tile-z chatz" href="${U.CHAT(9)}"><span class="te">💬</span><span class="tt"><b>Group chat · exit ticket</b><small>8 questions before the assessment</small></span></a>`, '🏆');
+  }
   if (z === 'listening') {
     body = unitChips()
       + group('Mid-term papers', 'Listening 1 (notes + explanations) and Listening 2 (cause and effect + opinion), exactly like the test.', MID.LISTEN.map(p => tile(z, `#/a/listening/mid/${p.id}`, '🌙', `${p.title}: ${p.l1.title} + ${p.l2.title}`, p.units, `listening:mid:${p.id}`, unitsOf({ src: p.units }))).join(''), '🌙')
@@ -236,6 +247,16 @@ function mixed(n) { const g = GR.topics.flatMap(t => t.q.filter(q => ['mcq', 'tf
 
 function activity(z, kind, rest) {
   const id = rest[0];
+  if (z === 'lab') {
+    const U = window.U6;
+    if (kind === 'cards') { G.flashcards(mount(z, '🃏 Unit 6 flashcards', 'Discovery and Invention'), 'u6'); return; }
+    if (kind === 'set') { const d = U.DAYS.find(x => x.sets.some(st => st.id === id)); if (!d) return nf(z); const st = d.sets.find(x => x.id === id);
+      runQuiz(mount(z, `${st.emoji} ${st.title}`, `Day ${d.n} · ${d.title}`), { title: st.title, questions: st.q, key: `lab:set:${st.id}` }); return; }
+    if (kind === 'read') { const h = mount(z, '🤖 Robot nurses: the future of care?', 'Day 9 · a new text with test-style questions');
+      h.innerHTML = articleHTML('Robot nurses: the future of care?', U.ROBOT) + '<div class="qslot"></div>'; runQuiz($('.qslot', h), { title: 'Robot nurses', questions: U.READ9, key: 'lab:read:robots' }); reveal(); return; }
+    if (kind === 'test') { runQuiz(mount(z, '🏆 Unit 6 test', 'Words, reading, grammar and writing'), { title: 'Unit 6 test', questions: U.TEST, key: 'lab:test:u6' }); return; }
+    return nf(z);
+  }
   // ---------- LISTENING ----------
   if (z === 'listening') {
     if (kind === 'lesson') { const L = byId(LI.lessons, id); if (!L) return nf(z); const h = mount(z, `${L.emoji} ${L.title}`, L.src);
