@@ -982,5 +982,1046 @@ const TICKETS = {
     "w": "Questions first, then skim and scan. Good luck tomorrow!! 🍀💖"
    }
   ]
+ },
+ "p1u6-d1": {
+  "cls": "PSE 1B",
+  "day": 1,
+  "date": "Sunday 29 November 2026",
+  "title": "Second Life",
+  "group": "Future Founders 🚀",
+  "members": [
+   "Omar",
+   "Lina",
+   "Faisal"
+  ],
+  "av": [
+   "💼",
+   "🚀",
+   "📈",
+   "💡"
+  ],
+  "theme": {
+   "a": "#14B8A6",
+   "b": "#0E7C74",
+   "c": "#A3E635",
+   "bg": "#03161A"
+  },
+  "intro": "Hi {name}! 👋 Welcome to the team. Quick check on today's video about circular businesses: 8 questions?",
+  "outro": "Great work, {name}! 🚀 Tomorrow: \"Are you ready for the world of work?\" 💼",
+  "qs": [
+   {
+    "who": "Omar",
+    "q": "Team 🚀 what is a \"circular\" business?",
+    "o": [
+     "a business that makes new things from waste",
+     "a business with a round office",
+     "a business that only sells new things"
+    ],
+    "a": 0,
+    "w": "Circular = waste becomes new products. ♻️"
+   },
+   {
+    "who": "Lina",
+    "q": "In the video, Rejoué sells toys that are ...",
+    "o": [
+     "not new",
+     "new",
+     "very expensive"
+    ],
+    "a": 0,
+    "w": "They mend old toys and sell them again. 🧸"
+   },
+   {
+    "who": "Faisal",
+    "q": "How much cheaper are Rejoué's toys?",
+    "o": [
+     "40%",
+     "30%",
+     "50%"
+    ],
+    "a": 0,
+    "w": "40% cheaper. 💰"
+   },
+   {
+    "who": "Omar",
+    "q": "Kenenti in Tunisia recycles shoes and ...",
+    "o": [
+     "bags",
+     "hats",
+     "phones"
+    ],
+    "a": 0,
+    "w": "Shoes and bags. 👟"
+   },
+   {
+    "who": "Lina",
+    "q": "TileGreen in Cairo makes building materials from ...",
+    "o": [
+     "plastic items",
+     "fish skin",
+     "old toys"
+    ],
+    "a": 0,
+    "w": "Plastic bags, bottles and food boxes. 🧱"
+   },
+   {
+    "who": "Faisal",
+    "q": "My phone broke, so a shop ___ it for me.",
+    "o": [
+     "mended",
+     "threw away",
+     "wasted"
+    ],
+    "a": 0,
+    "w": "mend = repair. 🔧"
+   },
+   {
+    "who": "Omar",
+    "q": "Don't ___ that bottle! We can reuse it 😅",
+    "o": [
+     "throw away",
+     "mend",
+     "recycle"
+    ],
+    "a": 0,
+    "w": "throw away = put it in the bin. 🗑️"
+   },
+   {
+    "who": "Lina",
+    "q": "Last one! reuse or recycle? \"Make a NEW bag from old plastic.\"",
+    "o": [
+     "recycle",
+     "reuse"
+    ],
+    "a": 0,
+    "w": "recycle = make a new thing. Great job, team! 🎉"
+   }
+  ]
+ },
+ "p1u6-d2": {
+  "cls": "PSE 1B",
+  "day": 2,
+  "date": "Monday 30 November 2026",
+  "title": "World of Work",
+  "group": "Career Crew 💼",
+  "members": [
+   "Omar",
+   "Lina",
+   "Faisal"
+  ],
+  "av": [
+   "💼",
+   "🚀",
+   "📈",
+   "💡"
+  ],
+  "theme": {
+   "a": "#3B82F6",
+   "b": "#1D4ED8",
+   "c": "#22D3EE",
+   "bg": "#050B24"
+  },
+  "intro": "Hey {name}! 💼 Quick team check on today's quiz about jobs: 8 questions?",
+  "outro": "Nice one, {name}! 🎉 Tomorrow: the story of ChatGPT and OpenAI 🤖",
+  "qs": [
+   {
+    "who": "Omar",
+    "q": "Team 💼 the quiz talks about four types of jobs. Which list is right?",
+    "o": [
+     "people, information, things, ideas",
+     "animals, information, machines, ideas",
+     "people, money, things, sport"
+    ],
+    "a": 0,
+    "w": "Four types: people, information, things, ideas. ✅"
+   },
+   {
+    "who": "Lina",
+    "q": "We skimmed page 129. What kind of text is it?",
+    "o": [
+     "an online quiz",
+     "a dictionary entry",
+     "a textbook"
+    ],
+    "a": 0,
+    "w": "An online quiz on a website. 🌐"
+   },
+   {
+    "who": "Faisal",
+    "q": "My ___ and I work in the same office. 👨‍💻",
+    "o": [
+     "colleague",
+     "customer",
+     "occupation"
+    ],
+    "a": 0,
+    "w": "colleague = somebody you work with. 🤝"
+   },
+   {
+    "who": "Omar",
+    "q": "I want to ___ for a job at Almarai. 📄",
+    "o": [
+     "apply",
+     "organize",
+     "result"
+    ],
+    "a": 0,
+    "w": "apply FOR a job. ✍️"
+   },
+   {
+    "who": "Lina",
+    "q": "On the form: Name, Age, ___ : engineer.",
+    "o": [
+     "Occupation",
+     "Customer",
+     "Results"
+    ],
+    "a": 0,
+    "w": "occupation = job (formal). 📋"
+   },
+   {
+    "who": "Faisal",
+    "q": "\"My desk is neat: everything is in its place.\" neat means ...",
+    "o": [
+     "arranged well",
+     "not arranged",
+     "very big"
+    ],
+    "a": 0,
+    "w": "You guessed it from the context! 🧠"
+   },
+   {
+    "who": "Omar",
+    "q": "Who is the quiz for?",
+    "o": [
+     "students and new graduates",
+     "only managers",
+     "children"
+    ],
+    "a": 0,
+    "w": "They are looking for their first job. 🎓"
+   },
+   {
+    "who": "Lina",
+    "q": "Last one! Which is the best topic sentence?",
+    "o": [
+     "I would hate to be a waiter.",
+     "Waiters work long hours.",
+     "For example, restaurants open late."
+    ],
+    "a": 0,
+    "w": "The topic sentence names the job. Great work! 🚀"
+   }
+  ]
+ },
+ "p1u6-d3": {
+  "cls": "PSE 1B",
+  "day": 3,
+  "date": "Tuesday 1 December 2026",
+  "title": "The AI Startup",
+  "group": "AI Startup Squad 🤖",
+  "members": [
+   "Omar",
+   "Lina",
+   "Faisal"
+  ],
+  "av": [
+   "💼",
+   "🚀",
+   "📈",
+   "💡"
+  ],
+  "theme": {
+   "a": "#8B5CF6",
+   "b": "#6D28D9",
+   "c": "#22D3EE",
+   "bg": "#0B0720"
+  },
+  "intro": "Hi {name}! 🤖 Today we read the story of ChatGPT. Ready for 8 quick questions?",
+  "outro": "Well done, {name}! 🎉 Tomorrow: business words and timelines 📈",
+  "qs": [
+   {
+    "who": "Omar",
+    "q": "Team 🤖 which company owns ChatGPT?",
+    "o": [
+     "OpenAI",
+     "Microsoft",
+     "TikTok"
+    ],
+    "a": 0,
+    "w": "ChatGPT is owned by OpenAI. ✅"
+   },
+   {
+    "who": "Lina",
+    "q": "Who set up OpenAI in 2015?",
+    "o": [
+     "Elon Musk, Sam Altman and others",
+     "Mark Zuckerberg",
+     "Richard Branson"
+    ],
+    "a": 0,
+    "w": "Paragraph 1. 📅"
+   },
+   {
+    "who": "Faisal",
+    "q": "What was OpenAI's goal?",
+    "o": [
+     "to build safe AI for everyone",
+     "to sell phones",
+     "to stop people using AI"
+    ],
+    "a": 0,
+    "w": "Safe AI technology for everyone. 🛡️"
+   },
+   {
+    "who": "Omar",
+    "q": "How many people does OpenAI employ?",
+    "o": [
+     "375",
+     "275",
+     "13 million"
+    ],
+    "a": 0,
+    "w": "375 people (not 275!). 👥"
+   },
+   {
+    "who": "Lina",
+    "q": "Best heading for paragraph 2?",
+    "o": [
+     "The growth of OpenAI",
+     "Goals then and now",
+     "The future of OpenAI"
+    ],
+    "a": 0,
+    "w": "It is about how fast OpenAI grew. 📈"
+   },
+   {
+    "who": "Faisal",
+    "q": "Companies ___ their products on TV so people want to buy them.",
+    "o": [
+     "advertise",
+     "employ",
+     "set up"
+    ],
+    "a": 0,
+    "w": "advertise = tell people about a product. 📣"
+   },
+   {
+    "who": "Omar",
+    "q": "My uncle ___ his own café. He is the boss. ☕",
+    "o": [
+     "runs",
+     "employs",
+     "introduces"
+    ],
+    "a": 0,
+    "w": "run a business = manage it. 💼"
+   },
+   {
+    "who": "Lina",
+    "q": "Last one! The creators of OpenAI think AI ...",
+    "o": [
+     "can make the world a better place",
+     "must be powerful to be successful",
+     "is dangerous"
+    ],
+    "a": 0,
+    "w": "Statement a. Great reading, team! 🚀"
+   }
+  ]
+ },
+ "p1u6-d4": {
+  "cls": "PSE 1B",
+  "day": 4,
+  "date": "Wednesday 2 December 2026",
+  "title": "Business Builders",
+  "group": "Business Builders 📈",
+  "members": [
+   "Omar",
+   "Lina",
+   "Faisal"
+  ],
+  "av": [
+   "💼",
+   "🚀",
+   "📈",
+   "💡"
+  ],
+  "theme": {
+   "a": "#F97316",
+   "b": "#C2410C",
+   "c": "#FACC15",
+   "bg": "#0E1A2B"
+  },
+  "intro": "Hi {name}! 📈 8 quick questions on collocations, office words and our timeline. Ready?",
+  "outro": "Great job, {name}! 🎉 Tomorrow: research a business and the past simple ⏳",
+  "qs": [
+   {
+    "who": "Omar",
+    "q": "Team 📈 a detailed document about the future of a business is a business ...",
+    "o": [
+     "plan",
+     "contact",
+     "partner"
+    ],
+    "a": 0,
+    "w": "a business plan. 📋"
+   },
+   {
+    "who": "Lina",
+    "q": "To make a business bigger means to ___ it.",
+    "o": [
+     "expand",
+     "run",
+     "set up"
+    ],
+    "a": 0,
+    "w": "expand = make bigger. 🚀"
+   },
+   {
+    "who": "Faisal",
+    "q": "My cousin ___ a shop. She is in charge of it.",
+    "o": [
+     "runs",
+     "expands",
+     "contacts"
+    ],
+    "a": 0,
+    "w": "run a business = be in charge. 💼"
+   },
+   {
+    "who": "Omar",
+    "q": "Verbs come ___ \"business\": set up a business.",
+    "o": [
+     "before",
+     "after"
+    ],
+    "a": 0,
+    "w": "Verb + a business; business + noun. ✅"
+   },
+   {
+    "who": "Lina",
+    "q": "The person who leads a team or a business is the ...",
+    "o": [
+     "manager",
+     "employee",
+     "product"
+    ],
+    "a": 0,
+    "w": "manager. 👩‍💼"
+   },
+   {
+    "who": "Faisal",
+    "q": "Programs that control a computer: ...",
+    "o": [
+     "software",
+     "products",
+     "office"
+    ],
+    "a": 0,
+    "w": "software (uncountable!). 💻"
+   },
+   {
+    "who": "Omar",
+    "q": "Which came FIRST in OpenAI's history?",
+    "o": [
+     "Musk, Altman and others set up OpenAI",
+     "ChatGPT is introduced",
+     "The office in San Francisco opens"
+    ],
+    "a": 0,
+    "w": "2015: the start of the timeline. 📅"
+   },
+   {
+    "who": "Lina",
+    "q": "Last one! What came LAST?",
+    "o": [
+     "A subscription is available (2023)",
+     "GPT technology (2018)",
+     "The first AI program (2016)"
+    ],
+    "a": 0,
+    "w": "February 2023. Great timeline, team! 🎉"
+   }
+  ]
+ },
+ "p1u6-d5": {
+  "cls": "PSE 1B",
+  "day": 5,
+  "date": "Thursday 3 December 2026",
+  "title": "Timeline",
+  "group": "Timeline Team ⏳",
+  "members": [
+   "Omar",
+   "Lina",
+   "Faisal"
+  ],
+  "av": [
+   "💼",
+   "🚀",
+   "📈",
+   "💡"
+  ],
+  "theme": {
+   "a": "#EAB308",
+   "b": "#A16207",
+   "c": "#38BDF8",
+   "bg": "#0C0F1E"
+  },
+  "intro": "Hi {name}! ⏳ Last chat of the week: timelines and past verbs. 8 questions?",
+  "outro": "Excellent, {name}! 🎉 Have a good weekend. Sunday: \"when\" and details 🧩",
+  "qs": [
+   {
+    "who": "Omar",
+    "q": "Team ⏳ \"OpenAI ___ 375 people.\" It is true NOW.",
+    "o": [
+     "employs",
+     "employed",
+     "employ"
+    ],
+    "a": 0,
+    "w": "Present simple for facts that are true now. ✅"
+   },
+   {
+    "who": "Lina",
+    "q": "\"In 2012, Facebook ___ Instagram for $1 billion.\"",
+    "o": [
+     "bought",
+     "buyed",
+     "buys"
+    ],
+    "a": 0,
+    "w": "buy → bought (irregular). 💰"
+   },
+   {
+    "who": "Faisal",
+    "q": "\"In 2022, ChatGPT ___ faster than any other app.\"",
+    "o": [
+     "grew",
+     "growed",
+     "grows"
+    ],
+    "a": 0,
+    "w": "grow → grew. 📈"
+   },
+   {
+    "who": "Omar",
+    "q": "Past of \"set up\"?",
+    "o": [
+     "set up",
+     "setted up",
+     "sat up"
+    ],
+    "a": 0,
+    "w": "set up → set up (no change!). 🏗️"
+   },
+   {
+    "who": "Lina",
+    "q": "Which -ed sounds like /ɪd/?",
+    "o": [
+     "started",
+     "walked",
+     "opened"
+    ],
+    "a": 0,
+    "w": "After t or d, we say /ɪd/: start-ed. 🗣️"
+   },
+   {
+    "who": "Faisal",
+    "q": "Which sentence is correct?",
+    "o": [
+     "Careem is located in Dubai.",
+     "Careem located in Dubai.",
+     "Careem locate in Dubai."
+    ],
+    "a": 0,
+    "w": "Every sentence needs a verb! 🔎"
+   },
+   {
+    "who": "Omar",
+    "q": "On a timeline, the FIRST event goes on the ...",
+    "o": [
+     "left",
+     "right"
+    ],
+    "a": 0,
+    "w": "Left = first, right = last. ⬅️"
+   },
+   {
+    "who": "Lina",
+    "q": "Last one! \"In 2018, my business partner ___ the company.\"",
+    "o": [
+     "left",
+     "leaves",
+     "leaved"
+    ],
+    "a": 0,
+    "w": "leave → left. Great work this week! 🎉"
+   }
+  ]
+ },
+ "p1u6-d6": {
+  "cls": "PSE 1B",
+  "day": 6,
+  "date": "Sunday 6 December 2026",
+  "title": "When It Happened",
+  "group": "Startup Story Club 🧩",
+  "members": [
+   "Omar",
+   "Lina",
+   "Faisal"
+  ],
+  "av": [
+   "💼",
+   "🚀",
+   "📈",
+   "💡"
+  ],
+  "theme": {
+   "a": "#EF4444",
+   "b": "#B91C1C",
+   "c": "#F59E0B",
+   "bg": "#120A0D"
+  },
+  "intro": "Welcome back, {name}! 🧩 New week: \"when\" and details. 8 questions?",
+  "outro": "Brilliant, {name}! 🎉 Tomorrow we write the history of a business ✍️",
+  "qs": [
+   {
+    "who": "Omar",
+    "q": "Team 🧩 which sentence is correct?",
+    "o": [
+     "When I was 18, I became an entrepreneur.",
+     "When I was 18 I became an entrepreneur.",
+     "I became an entrepreneur, when I was 18."
+    ],
+    "a": 0,
+    "w": "when clause FIRST → comma. ✅"
+   },
+   {
+    "who": "Lina",
+    "q": "And this one?",
+    "o": [
+     "I became an entrepreneur when I was 18.",
+     "I became an entrepreneur, when I was 18.",
+     "I became, an entrepreneur when I was 18."
+    ],
+    "a": 0,
+    "w": "when clause SECOND → no comma. 👌"
+   },
+   {
+    "who": "Faisal",
+    "q": "Bill Gates was 26 ___ he became a millionaire.",
+    "o": [
+     "when",
+     "what",
+     "where"
+    ],
+    "a": 0,
+    "w": "when = the time something happened. ⏰"
+   },
+   {
+    "who": "Omar",
+    "q": "\"When the business ___ more employees, they moved to bigger offices.\"",
+    "o": [
+     "needed",
+     "needs",
+     "need"
+    ],
+    "a": 0,
+    "w": "Both events are in the past. 🏢"
+   },
+   {
+    "who": "Lina",
+    "q": "Which detail tells us WHY?",
+    "o": [
+     "They wanted to help people share videos.",
+     "The room was above a pizza restaurant.",
+     "It cost $1.65 billion."
+    ],
+    "a": 0,
+    "w": "A reason answers \"why?\". 💡"
+   },
+   {
+    "who": "Faisal",
+    "q": "\"YouTube's first office was in a simple room.\" Which detail fits next?",
+    "o": [
+     "The room was above a pizza restaurant.",
+     "Google paid $1.65 billion.",
+     "It showed Karim at the zoo."
+    ],
+    "a": 0,
+    "w": "The detail must be about the room. 🍕"
+   },
+   {
+    "who": "Omar",
+    "q": "\"an incredible price\": what kind of detail is \"incredible\"?",
+    "o": [
+     "an adjective",
+     "a date",
+     "a reason"
+    ],
+    "a": 0,
+    "w": "Adjectives help the reader see it. ✨"
+   },
+   {
+    "who": "Lina",
+    "q": "Last one! How much did Google pay for YouTube?",
+    "o": [
+     "$1.65 billion",
+     "$1 billion",
+     "$3.1 billion"
+    ],
+    "a": 0,
+    "w": "$1.65 billion in 2006. Great work, team! 🎉"
+   }
+  ]
+ },
+ "p1u6-d7": {
+  "cls": "PSE 1B",
+  "day": 7,
+  "date": "Monday 7 December 2026",
+  "title": "Write the Story",
+  "group": "Writers' Room ✍️",
+  "members": [
+   "Omar",
+   "Lina",
+   "Faisal"
+  ],
+  "av": [
+   "💼",
+   "🚀",
+   "📈",
+   "💡"
+  ],
+  "theme": {
+   "a": "#10B981",
+   "b": "#047857",
+   "c": "#FDE047",
+   "bg": "#03140C"
+  },
+  "intro": "Hi {name}! ✍️ Draft day check: 8 questions about our business stories?",
+  "outro": "Super, {name}! 🎉 Tomorrow we check, edit and finish our paragraphs 🚀",
+  "qs": [
+   {
+    "who": "Omar",
+    "q": "Team ✍️ what does the topic sentence do?",
+    "o": [
+     "It says what the paragraph is about.",
+     "It gives the last date.",
+     "It lists all the events."
+    ],
+    "a": 0,
+    "w": "The business + the main idea. 🎯"
+   },
+   {
+    "who": "Lina",
+    "q": "How many main events will you write about?",
+    "o": [
+     "four",
+     "seven",
+     "two"
+    ],
+    "a": 0,
+    "w": "Four events from your timeline (Exercise 2). 4️⃣"
+   },
+   {
+    "who": "Faisal",
+    "q": "In the model, what happened in 1997?",
+    "o": [
+     "Hastings and Randolph set up Netflix.",
+     "Netflix started streaming.",
+     "Netflix won three Emmys."
+    ],
+    "a": 0,
+    "w": "1997: the start of the story. 🎬"
+   },
+   {
+    "who": "Omar",
+    "q": "\"___ first, customers chose films on the website.\"",
+    "o": [
+     "At",
+     "In",
+     "On"
+    ],
+    "a": 0,
+    "w": "At first = at the beginning. ⏱️"
+   },
+   {
+    "who": "Lina",
+    "q": "Which sentence is a DETAIL?",
+    "o": [
+     "Netflix sent the DVDs by mail.",
+     "In 2007, Netflix started streaming.",
+     "By 2016, it was in 190 countries."
+    ],
+    "a": 0,
+    "w": "A detail tells us how or why. 📦"
+   },
+   {
+    "who": "Faisal",
+    "q": "\"When Netflix ___ its first series, it won three Emmys.\"",
+    "o": [
+     "introduced",
+     "introduces",
+     "introduce"
+    ],
+    "a": 0,
+    "w": "Past simple in both clauses. 🏆"
+   },
+   {
+    "who": "Omar",
+    "q": "The events in the paragraph are in ...",
+    "o": [
+     "time order",
+     "any order",
+     "alphabetical order"
+    ],
+    "a": 0,
+    "w": "Oldest → newest. 📅"
+   },
+   {
+    "who": "Lina",
+    "q": "Last one! A good concluding sentence starts with ...",
+    "o": [
+     "Today, ...",
+     "In 1997, ...",
+     "At first, ..."
+    ],
+    "a": 0,
+    "w": "Today = where the business is now. Great drafts, team! 🎉"
+   }
+  ]
+ },
+ "p1u6-d8": {
+  "cls": "PSE 1B",
+  "day": 8,
+  "date": "Tuesday 8 December 2026",
+  "title": "Launch Day",
+  "group": "Launch Crew 🚀",
+  "members": [
+   "Omar",
+   "Lina",
+   "Faisal"
+  ],
+  "av": [
+   "💼",
+   "🚀",
+   "📈",
+   "💡"
+  ],
+  "theme": {
+   "a": "#6366F1",
+   "b": "#4338CA",
+   "c": "#2DD4BF",
+   "bg": "#0A0A24"
+  },
+  "intro": "Hey {name}! 🚀 Launch day: 8 questions about checking and editing. Ready?",
+  "outro": "Congratulations, {name}! 🎉 Tomorrow: the big Unit 6 review 🏆",
+  "qs": [
+   {
+    "who": "Omar",
+    "q": "Team 🚀 the task checklist asks about ...",
+    "o": [
+     "the content: events, dates, details",
+     "only spelling",
+     "only the title"
+    ],
+    "a": 0,
+    "w": "Revise content first. ✅"
+   },
+   {
+    "who": "Lina",
+    "q": "The code VF means ...",
+    "o": [
+     "verb form",
+     "very fast",
+     "vocabulary"
+    ],
+    "a": 0,
+    "w": "VF = verb form: buyed → bought. 🔧"
+   },
+   {
+    "who": "Faisal",
+    "q": "\"In 2012, two friends ___ a business.\"",
+    "o": [
+     "set up",
+     "made up",
+     "did"
+    ],
+    "a": 0,
+    "w": "set up a business. 💼"
+   },
+   {
+    "who": "Omar",
+    "q": "\"At first, Careem ___ very small.\"",
+    "o": [
+     "was",
+     "—",
+     "is"
+    ],
+    "a": 0,
+    "w": "Every sentence needs a verb! (MV) 🔎"
+   },
+   {
+    "who": "Lina",
+    "q": "\"___ many customers today.\"",
+    "o": [
+     "There are",
+     "They are",
+     "Their are"
+    ],
+    "a": 0,
+    "w": "There are = it exists. 👥"
+   },
+   {
+    "who": "Faisal",
+    "q": "Which is correct?",
+    "o": [
+     "When Facebook bought Instagram, it paid $1 billion.",
+     "When Facebook bought Instagram it paid $1 billion.",
+     "Facebook bought Instagram, when it paid $1 billion."
+    ],
+    "a": 0,
+    "w": "when clause first → comma. ✏️"
+   },
+   {
+    "who": "Omar",
+    "q": "Exercise 6: tell your partner ...",
+    "o": [
+     "three things they did well and two things to improve",
+     "only the mistakes",
+     "only the good things"
+    ],
+    "a": 0,
+    "w": "3 well + 2 improve. 🤝"
+   },
+   {
+    "who": "Lina",
+    "q": "Last one! In a business history, the events are in ...",
+    "o": [
+     "time order",
+     "random order",
+     "order of importance only"
+    ],
+    "a": 0,
+    "w": "Time order with dates. You launched it, team! 🎉"
+   }
+  ]
+ },
+ "p1u6-d9": {
+  "cls": "PSE 1B",
+  "day": 9,
+  "date": "Wednesday 9 December 2026",
+  "title": "Business Review",
+  "group": "Champions Board 🏆",
+  "members": [
+   "Omar",
+   "Lina",
+   "Faisal"
+  ],
+  "av": [
+   "💼",
+   "🚀",
+   "📈",
+   "💡"
+  ],
+  "theme": {
+   "a": "#F43F5E",
+   "b": "#BE123C",
+   "c": "#22D3EE",
+   "bg": "#140A24"
+  },
+  "intro": "{name}! 🏆 Last review before the test: 8 questions. Let's go!",
+  "outro": "You're ready, {name}! 🌟 Sleep well and good luck tomorrow! 🍀",
+  "qs": [
+   {
+    "who": "Omar",
+    "q": "Team 🏆 \"somebody you work with\" is a ...",
+    "o": [
+     "colleague",
+     "customer",
+     "manager"
+    ],
+    "a": 0,
+    "w": "colleague. 🤝"
+   },
+   {
+    "who": "Lina",
+    "q": "T, F or NG? \"The brothers studied business at university.\"",
+    "o": [
+     "Not Given",
+     "True",
+     "False"
+    ],
+    "a": 0,
+    "w": "The text does not say it. 🔍"
+   },
+   {
+    "who": "Faisal",
+    "q": "What did Nakhla Coffee introduce in 2020?",
+    "o": [
+     "a delivery app",
+     "a coffee truck",
+     "a business partner"
+    ],
+    "a": 0,
+    "w": "A delivery app. 📱"
+   },
+   {
+    "who": "Omar",
+    "q": "\"Today, the company ___ 150 people.\"",
+    "o": [
+     "employs",
+     "employed",
+     "employ"
+    ],
+    "a": 0,
+    "w": "Today → present simple. ✅"
+   },
+   {
+    "who": "Lina",
+    "q": "\"In 2022, they ___ a business partner.\"",
+    "o": [
+     "found",
+     "finded",
+     "find"
+    ],
+    "a": 0,
+    "w": "find → found. 🔎"
+   },
+   {
+    "who": "Faisal",
+    "q": "Which is correct?",
+    "o": [
+     "When the café opened, many customers came.",
+     "When the café opened many customers came.",
+     "Many customers came, when the café opened."
+    ],
+    "a": 0,
+    "w": "when clause first → comma. ✏️"
+   },
+   {
+    "who": "Omar",
+    "q": "In timed writing, what do you do FIRST?",
+    "o": [
+     "Plan for five minutes.",
+     "Start writing immediately.",
+     "Write the title only."
+    ],
+    "a": 0,
+    "w": "Plan, write, check. 📝"
+   },
+   {
+    "who": "Lina",
+    "q": "Last one! Before you finish the test ...",
+    "o": [
+     "check every answer and leave no blanks",
+     "leave early",
+     "only check the writing"
+    ],
+    "a": 0,
+    "w": "Good luck tomorrow, team! 🍀🏆"
+   }
+  ]
  }
 };

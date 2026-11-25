@@ -82,18 +82,18 @@ function list() {
 function add(html, me, cls = '') { const d = document.createElement('div'); d.className = 'row ' + (me ? 'me ' : '') + cls; d.innerHTML = html; $('#chat').appendChild(d); $('#chat').scrollTop = 1e9; return d; }
 function sys(t) { const d = document.createElement('div'); d.className = 'sys'; d.innerHTML = `<span>${t}</span>`; $('#chat').appendChild(d); }
 function friend(who, text, cls = '') {
-  const k = Math.max(0, TK.members.indexOf(who)); beep(660, .06);
-  return add(`<div class="av" style="background:${COLS[k % 4]}">${AV[k % 4]}</div><div class="bub ${cls}"><span class="who" style="color:${COLS[k % 4]}">${esc(who)}</span>${text}<span class="tm">${now()}</span></div>`);
+  const k = Math.max(0, TK.members.indexOf(who)); beep(660, .06); const AVS = TK.av || AV;
+  return add(`<div class="av" style="background:${COLS[k % 4]}">${AVS[k % 4]}</div><div class="bub ${cls}"><span class="who" style="color:${COLS[k % 4]}">${esc(who)}</span>${text}<span class="tm">${now()}</span></div>`);
 }
-async function typing(who, ms = 900) { const k = Math.max(0, TK.members.indexOf(who)); const d = add(`<div class="av" style="background:${COLS[k % 4]}">${AV[k % 4]}</div><div class="bub"><span class="dots"><i></i><i></i><i></i></span></div>`, false, 'typing'); $('#gsub').textContent = who + ' is typing…'; await wait(ms); d.remove(); $('#gsub').textContent = TK.members.join(', ') + ', You'; }
+async function typing(who, ms = 900) { const k = Math.max(0, TK.members.indexOf(who)); const d = add(`<div class="av" style="background:${COLS[k % 4]}">${(TK.av || AV)[k % 4]}</div><div class="bub"><span class="dots"><i></i><i></i><i></i></span></div>`, false, 'typing'); $('#gsub').textContent = who + ' is typing…'; await wait(ms); d.remove(); $('#gsub').textContent = TK.members.join(', ') + ', You'; }
 const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const NO = ['Hmm 🤔 not that one… choose another one!', 'Nooo 😅 try another reply!', 'Almost! 🙈 choose another one.', 'Not quite 💭 pick another one!'];
 const YES = ['Yesss 💖', 'Exactly!! 🎉', 'Perfect 😍', 'Correct ✨', 'You\'re a genius 💜'];
 function student() {
   theme(TK.theme || {}); document.title = TK.group + ' · ' + TK.title;
-  $('#gname').textContent = TK.group; $('#gsub').textContent = TK.members.join(', ') + ' · ' + TK.title; $('#prog').textContent = '0/' + TK.qs.length;
+  $('#gname').textContent = TK.group; if (TK.av) $('#gav').textContent = '🚀'; $('#gsub').textContent = TK.members.join(', ') + ' · ' + TK.title; $('#prog').textContent = '0/' + TK.qs.length;
   const j = document.createElement('div'); j.className = 'join';
-  j.innerHTML = `<div class="card"><div class="big">💬</div><h1>${esc(TK.group)}</h1><p>${esc(TK.cls)} · Day ${TK.day} · ${esc(TK.title)}<br>${esc(TK.date)}</p><input id="nm" maxlength="20" placeholder="Your first name" autocomplete="given-name"><button class="btn" id="go">Join the chat 💜</button></div>`;
+  j.innerHTML = `<div class="card"><div class="big">${TK.av ? '🚀' : '💬'}</div><h1>${esc(TK.group)}</h1><p>${esc(TK.cls)} · Day ${TK.day} · ${esc(TK.title)}<br>${esc(TK.date)}</p><input id="nm" maxlength="20" placeholder="Your first name" autocomplete="given-name"><button class="btn" id="go">Join the chat ${TK.av ? '🚀' : '💜'}</button></div>`;
   $('#app').appendChild(j); $('#nm').focus();
   $('#go').onclick = () => { const n = $('#nm').value.trim(); if (!n) { $('#nm').focus(); return; } j.remove(); run(n); };
   $('#nm').onkeydown = e => { if (e.key === 'Enter') $('#go').click(); };
